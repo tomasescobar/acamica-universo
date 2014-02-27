@@ -1,3 +1,7 @@
+
+/* ====================================================
+	GENERAL
+==================================================== */
 html, body {
 	padding: 0;
 	margin: 0;
@@ -7,11 +11,53 @@ html, body {
 }
 
 body {
-	background-color: #25388b;
+	background-color: #0D1120;
 }
 
+
+/* ====================================================
+	HEADER
+==================================================== */
+.logo {
+	background: url(../img/home/acamica.svg);
+	background-size: 100% auto;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	margin: 0;
+	height: 25px;
+	position: fixed;
+	top: 30px; left: 5%;
+	width: 150px;
+	text-indent: 9999px;
+	z-index: 9999;
+}
+
+.menu {
+	position: fixed;
+	top: 20px; right: 5%;
+	z-index: 9999;
+}
+.menu li {
+	display: inline-block;
+	font-size: .8em;
+	margin: 0 15px;
+	text-transform: uppercase;
+}
+.menu li a {
+	color: #FFF;
+	opacity: .75;
+}
+.menu li a:hover {
+	opacity: 1;
+}
+
+
+/* ====================================================
+	BACKGROUNDS
+==================================================== */
 #frame {
 	position: fixed;
+	bottom: 0;
 	height: 100%;
 	width: 100%;
 }
@@ -20,7 +66,14 @@ body {
 	bottom: 0;
 	height: 5000px;
 	width: 100%;
-	background: linear-gradient(#2e3191, #00adee 42%, #e0d7c2);
+	background: linear-gradient(#0D1120, #00adee 42%, #e0d7c2);
+}
+#universe {
+	position: absolute;
+	bottom: 2500px;
+	height: 1500px;
+	width: 100%;
+	background: #FFF;
 }
 
 #land {
@@ -28,12 +81,16 @@ body {
 	height: 100%;
 	width: 100%;
 	bottom: 0;
-	background: url(/img/home/land.svg);
+	background: url(../img/home/land.svg);
 	background-size: 100% auto;
 	background-position: bottom center;
 	background-repeat: no-repeat;
 }
 
+
+/* ====================================================
+	ROCKET
+==================================================== */
 #rocket {
 	left: 50%;
 	margin-left: -65px;
@@ -41,12 +98,12 @@ body {
 	z-index: 10000;
 	bottom: 0;
 	height: 200px;
-	width: 130px;
+	width: 25%;
 	span {
 		opacity: 0;
 		display: block;
 		height: 200px;
-		background: url(/img/home/rocket_land.svg);
+		background: url(../img/home/rocket_land.svg);
 		background-size: auto 100%;
 		background-repeat: no-repeat;
 		background-position: 0;
@@ -57,14 +114,14 @@ body {
 	&.on {
 		span:first-child {
 			opacity: 1;
-			background: url(/img/home/rocket_on.svg);
+			background: url(../img/home/rocket_on.svg);
 			background-size: auto 100%;
 			background-repeat: no-repeat;
 			background-position: 0;
 		}
 		span:nth-child(2) {
 			opacity: 0;
-			background: url(/img/home/rocket_on_2.svg);
+			background: url(../img/home/rocket_on_2.svg);
 			background-size: auto 100%;
 			background-repeat: no-repeat;
 			background-position: 0;
@@ -72,13 +129,14 @@ body {
 	}
 }
 
+
+/* ====================================================
+	TITLES
+==================================================== */
 #titles {
 	position: absolute;
 	z-index: 1000;
-	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 	color: #fff;
-	font-size: 18px;
-	line-height: 24px;
 	width: 100%;
 	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
 	height: 5000px;
@@ -93,10 +151,17 @@ body {
 		margin: 0 auto;
 	}
 	h1 {
-		font-size: 3em;
+		font-size: 2.5em;
 		font-weight: 400;
-		line-height: 1.2;
-		font-family: 'Lato';
 		margin: 0;
+	}
+	.arrow-up {
+		width: 50px; height: 50px;
+		background: url(../img/home/arrow-up.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0;
+		display: inline-block;
+		margin: 40px 0 0;
 	}
 }

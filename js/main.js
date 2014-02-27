@@ -7,11 +7,12 @@ var HomeAnimation = function() {
 	t.land = $('#land'),
 	t.rocket = $('#rocket'),
 	t.titles = $('#titles'),
+	t.arrow = $('#arrow'),
 
 	t.init = function() {
 		var winW = $(window).width();
 		var winH = $(window).height();
-		var rocketTopLimit = winH*.2;
+		var rocketTopLimit = winH*.25;
 
 		// Frame
 		t.rocket.css({
@@ -35,7 +36,7 @@ var HomeAnimation = function() {
 		$(document).on('scroll', function(e) {
 			var scrol = $(this).scrollTop();
 
-			if (scrol < 0) return;
+			if (scrol < 0 || scrol > 6000) return;
 						
 			// Land hide
 			t.land.css('top',scrol+'px');
@@ -45,8 +46,10 @@ var HomeAnimation = function() {
 			// Rocket launch
 			if (scrol > 30 && scrol < rocketTopLimit) {
 				t.rocket.addClass('on').css('bottom', scrol+'px');
+				t.arrow.addClass('hide');
 			} else if (scrol >= 0 && scrol < rocketTopLimit) {
 				t.rocket.removeClass('on').css('bottom', scrol+'px')
+				t.arrow.removeClass('hide');
 			} else {
 				t.rocket.css('bottom', rocketTopLimit+'px');
 			}
