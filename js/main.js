@@ -1,6 +1,7 @@
 var HomeAnimation = function() {
 	t = this,
 	t.rocketIsAnimating = false,
+	t.scene = 1,
 
 	// Elements
 	t.frame = $('#frame'),
@@ -8,6 +9,8 @@ var HomeAnimation = function() {
 	t.land = $('#land'),
 	t.rocket = $('#rocket'),
 	t.titles = $('#titles'),
+	t.clouds = $('#clouds').children('span'),
+	t.cloud_count = t.clouds.length,
 
 	t.init = function() {
 		var winW = $(window).width(),
@@ -36,7 +39,11 @@ var HomeAnimation = function() {
 			titlesBottomLimit = winH*.5;
 			// t.titles.css('marginBottom',-100+'px')
 			$(document).trigger('scroll');
-		});
+		}).on('load', function() {
+			setTimeout(function() {
+				window.scrollTo(0,0);
+			},0);
+		})
 
 		// Titles scroll event
 		$(document).on('scroll', function(e) {
@@ -49,21 +56,36 @@ var HomeAnimation = function() {
 				return false;
 			}
 			console.log(scrol)
-			// Land hide
-			t.land.css('top',scrol+'px');
+
+			// Global elements (present in all scenes)
 			t.sky.css('bottom',-scrol+'px');
 			t.titles.css('bottom',titlesBottomLimit-(scrol*1.4)+'px');
 
-			// Rocket launch
-			if (scrol > 30 && scrol < rocketTopLimit) {
-				t.rocket.removeClass().css('bottom', scrol+'px');
-			} else if (scrol >= 0 && scrol < rocketTopLimit) {
-				t.rocket.addClass('landed').css('bottom', scrol+'px')
-			} else {
-				t.rocket.css('bottom', rocketTopLimit+'px');
+			// Scene one
+			if (t.scene == 1) {
+				// Land hide
+				t.land.css('top',scrol+'px');
+				// Rocket launch
+				if (scrol > 30 && scrol < rocketTopLimit) {
+					t.rocket.removeClass().css('bottom', scrol+'px');
+				} else if (scrol >= 0 && scrol < rocketTopLimit) {
+					t.rocket.addClass('landed').css('bottom', scrol+'px')
+				} else {
+					t.rocket.css('bottom', rocketTopLimit+'px');
+				}
 			}
+			// Rocket animation
 			t.rocketAnimation();
 
+			// Clouds
+			if (t.scene < 3) {
+				for (var i = 0; i < t.cloud_count; i++) {
+					var cloud = t.clouds.eq(i);
+					cloud.css('top',(scrol*cloud.attr('data-speed'))+'px');
+				}
+			}
+
+			// Titles
 			t.titlesFade(scrol);
 		})
 	}
