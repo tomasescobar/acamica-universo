@@ -71,8 +71,8 @@ var HomeAnimation = function() {
 	t.rocketAnimation = function() {
 		if (t.rocketIsAnimating || t.rocket.hasClass('landed')) return;
 		t.rocketIsAnimating = true;
-		t.rocket.children().eq(0).fadeOut(300, function() {
-			$(this).fadeIn(300, function() {
+		t.rocket.children().eq(0).fadeOut(2, function() {
+			$(this).fadeIn(3, function() {
 				t.rocketIsAnimating = false;
 				t.rocketAnimation();
 			})
