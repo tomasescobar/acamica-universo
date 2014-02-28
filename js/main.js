@@ -32,7 +32,7 @@ var HomeAnimation = function() {
 			winW = $(window).width();
 			winH = $(window).height();
 			rocketTopLimit = winH*.25;
-			titlesBottomLimit = winH*.05;
+			titlesBottomLimit = winH*.5;
 			$(document).trigger('scroll');
 		});
 
