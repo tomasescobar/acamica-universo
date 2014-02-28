@@ -25,30 +25,40 @@ section {
 .lead {
 	font-size: 3em;
 	line-height: 1;
+	margin: 0 0 40px;
 }
 
 /* ====================================================
 	PRESENTATION
 ==================================================== */
 #presentation {
+	background-color: rgba(53, 194, 175, 0.85);
+	//background-color: rgba(0, 0, 0, 0.7);
 	color: #FFF;
 	margin: 0 auto;
 	width: 100%;
+	min-height: 600px !important;
 	text-align: center;
 	padding: 0;
+	.lead {
+		margin-bottom: 20px;
+	}
 	.arrow-scroll-button {
 		display: block;
 		position: absolute;
-		bottom: 50px; left: 50%;
+		bottom: 50px; left: 48%;
 	}
 	p {
-		font-size: 1em;
+		font-size: 1.2em;
 		line-height: 1.2;
 	}
 	.wrap {
 		width: 500px;
 		margin: 0 auto;
 		padding-top: 11%;
+	}
+	.actions {
+		margin-top: 40px;
 	}
 }
 
@@ -58,7 +68,7 @@ section {
 ==================================================== */
 #benefits {
 	overflow: hidden;
-	background: #FFF;
+	background: #f5f5f5;
 	ul {
 		overflow: hidden;
 		padding: 0;
@@ -66,25 +76,49 @@ section {
 	.item {
 		text-align: center;
 		list-style-type: none;
-
 	}
 	.figure {
 		display: inline-block;
 		background: #CCC;
-		width: 150px; height: 150px;
-		border-radius: 100px;
 	}
 	.wrap {
 		padding: 0 15%;
 	}
-	 h3 {
+	h3 {
+		margin: 0 0 70px;
+	}
+	h4 {
 		color: #666;
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
 	.desc {
 		color: #999;
 		line-height: 1.2;
 		margin: 0;
+	}
+	.step-one .figure {
+		width: 230px; height: 160px;
+		background: url(../../img/home-flat/project-console.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0;
+		display: inline-block
+	}
+	.step-two .figure {
+		width: 230px; height: 160px;
+		background: url(../../img/home-flat/project-web.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0;
+		display: inline-block
+	}
+	.step-three .figure {
+		width: 230px; height: 160px;
+		background: url(../../img/home-flat/project-final.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0;
+		display: inline-block
 	}
 }
 
@@ -93,7 +127,7 @@ section {
 	LEARN
 ==================================================== */
 #learn {
-	background: #f5f5f5;
+	background: #FFF;
 	.badges {
 		width: 500px; height: 500px;
 		background: url(../../img/home-flat/badges.svg);
@@ -109,7 +143,7 @@ section {
 	STUDENTS
 ==================================================== */
 #students {
-	background: #FFF;
+	background: #F5F5F5;
 	.figure {
 		border: 4px solid #EEE;
 		border-radius: 50px;
@@ -140,7 +174,8 @@ section {
 	ENGAGEMENT
 ==================================================== */
 #engagement {
-	margin-bottom: 30px;
+	background-color: #35c2af;
+	padding-bottom: 70px;
 	.lead {
 		color: #FFF;
 		margin: 0 0 10px;
@@ -156,6 +191,40 @@ section {
 		margin: 0 auto;
 		overflow: hidden;
 		width: 500px;
+	}
+}
+
+
+/* ====================================================
+	FUTURE
+==================================================== */
+#future {
+	background: #FFF;
+	
+	.features {
+		border: 1px solid #DDD;
+		border-radius: 10px;
+		margin: 10px auto 0;
+		width: 80%;
+
+		h4 {
+			font-size: 1em;
+			border-bottom: 1px solid #DDD;
+			padding: 5px 0 20px;
+			text-align: center;
+		}
+		ul {
+			padding: 10px 30px;
+			list-style-type: none;
+		}
+		ul li {
+			margin-bottom: 10px;
+		}
+		i {
+			color: #27AE60;
+			margin-right: 10px;
+			vertical-align: middle;
+		}
 	}
 }
 
@@ -197,5 +266,64 @@ footer {
 }
 
 
+/* ====================================================
+	FOOTER
+==================================================== */
+/* Smartphones (portrait and portrait) ----------- */
+@media only screen 
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+	
+	body {
+		font-size: 10pt;
+	}
+	main {
+		width: 320px;
+	}
 
+	#presentation {
+		height: 480px !important;
+		padding: 0 10px;
+		.wrap {
+			padding-top: 70px;
+			width: 100%;
+		}
+		.box {
+			width: 100%;
+		}
+		h2.lead {
+			font-size: 2.5em;
+			margin-bottom: 15px;
+			line-height: 1.1;
+		}
+		p {
+			font-size: 1.2em;
+		}
+		input {
+			display: block;
+			margin-bottom: 5px;
+		}
+		.arrow-scroll-button {
+			left: 42%;
+			bottom: 20px;
+		}
+	}
+
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (min-device-width : 321px)
+and (max-device-width : 480px) {
+	main {
+		width: 480px;
+	}
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+
+}
 

@@ -8,9 +8,13 @@ html, body {
 	overflow-x: hidden;
 	overflow-y: auto;
 }
-
-body, header {
-	background-color: #35c2af;
+body {
+	background-image: url(../../img/home-flat/back-photo.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-position: bottom center;
+	//background-color: #35c2af;
+	background-color: #000;
 }
 
 
@@ -23,7 +27,7 @@ header {
 	left: 0;
 	width: 100%;
 	height: 85px;
-	z-index: 1;
+	// z-index: 1;
 }
 .logo {
 	background: url(../../img/home/acamica.svg);
@@ -57,4 +61,21 @@ header {
 .menu li a:hover {
 	text-decoration: none;
 	opacity: 1;
+}
+
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	header {
+		height: 50px;
+	}
+	.logo {
+		width: 120px;
+		top: 11px;
+	}
+	.menu {
+		display: none;
+	}
 }
