@@ -45,6 +45,15 @@ var HomeAnimation = function() {
 			},0);
 		})
 
+		// Scroll arrows (go to scene)
+		t.titles.find('.arrow-scroll-button').click(function() {
+			var $this = $(this), parent = $this.parent(), scenes = t.titles.find('.scene');
+			var index = scenes.index(parent);
+			if (index > 0) {
+				$(document).scrollTo(scenes.eq(index-1), 500);
+			}
+		})
+
 		// Titles scroll event
 		$(document).on('scroll', function(e) {
 			var scrol = $(this).scrollTop();
