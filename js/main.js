@@ -7,28 +7,32 @@ var HomeAnimation = function() {
 	t.land = $('#land'),
 	t.rocket = $('#rocket'),
 	t.titles = $('#titles'),
-	t.arrow = $('#arrow'),
 
 	t.init = function() {
-		var winW = $(window).width();
-		var winH = $(window).height();
-		var rocketTopLimit = winH*.25;
+		var winW = $(window).width(),
+		winH = $(window).height(),
+		rocketTopLimit = winH*.25,
+		titlesBottomLimit = winH*.5,
+		scenarioH = t.titles.outerHeight()-t.titles.find('.scene').eq(0).height();
 
-		// Frame
+		// Frame default positions
 		t.rocket.css({
 			left: '50%'
 		})
-
 		t.titles.css({
-			marginTop: 0,
-			top: rocketTopLimit+'px'
+			bottom: titlesBottomLimit+'px'
 		})
+
+		// Total height
+		$('body').height(scenarioH);
+		t.sky.height(scenarioH);
 
 		// Resize update
 		$(window).resize(function() {
 			winW = $(window).width();
 			winH = $(window).height();
-			rocketTopLimit = winH*.15;
+			rocketTopLimit = winH*.25;
+			titlesBottomLimit = winH*.05;
 			$(document).trigger('scroll');
 		});
 
@@ -36,20 +40,23 @@ var HomeAnimation = function() {
 		$(document).on('scroll', function(e) {
 			var scrol = $(this).scrollTop();
 
-			if (scrol < 0 || scrol > 6000) return;
-						
+			if (scrol < 0 || scrol > 6000) {
+				t.land.css('top','0px');
+				t.sky.css('bottom','0px');
+				t.titles.css('bottom',titlesBottomLimit+'px');
+				return false;
+			}
+			console.log(scrol)
 			// Land hide
 			t.land.css('top',scrol+'px');
 			t.sky.css('bottom',-scrol+'px');
-			t.titles.css('top',(rocketTopLimit+(scrol*1.5))+'px');
+			t.titles.css('bottom',titlesBottomLimit-(scrol*1.4)+'px');
 
 			// Rocket launch
 			if (scrol > 30 && scrol < rocketTopLimit) {
 				t.rocket.addClass('on').css('bottom', scrol+'px');
-				t.arrow.addClass('hide');
 			} else if (scrol >= 0 && scrol < rocketTopLimit) {
 				t.rocket.removeClass('on').css('bottom', scrol+'px')
-				t.arrow.removeClass('hide');
 			} else {
 				t.rocket.css('bottom', rocketTopLimit+'px');
 			}

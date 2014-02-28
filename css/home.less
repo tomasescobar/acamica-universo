@@ -1,0 +1,121 @@
+/* ====================================================
+	BACKGROUNDS
+==================================================== */
+#frame {
+	position: fixed;
+	bottom: 0;
+	height: 100%;
+	width: 100%;
+}
+#sky {
+	position: absolute;
+	bottom: 0;
+	height: 5000px;
+	width: 100%;
+	background: linear-gradient(#0D1120, #00adee 42%, #e0d7c2);
+}
+#universe {
+	position: absolute;
+	bottom: 2500px;
+	height: 1500px;
+	width: 100%;
+	background: #FFF;
+}
+
+#land {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	bottom: 0;
+	background: url(../img/home/land.svg);
+	background-size: 100% auto;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+
+
+/* ====================================================
+	ROCKET
+==================================================== */
+#rocket {
+	left: 50%;
+	margin-left: -65px;
+	position: absolute;
+	z-index: 10000;
+	bottom: 0;
+	height: 200px;
+	width: 25%;
+	span {
+		opacity: 0;
+		display: block;
+		height: 200px;
+		background: url(../img/home/rocket_land.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+	}
+	span:first-child {
+		opacity: 1;
+	}
+	&.on {
+		span:first-child {
+			opacity: 1;
+			background: url(../img/home/rocket_on.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+		span:nth-child(2) {
+			opacity: 0;
+			background: url(../img/home/rocket_on_2.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+	}
+}
+
+
+/* ====================================================
+	TITLES
+==================================================== */
+#titles {
+	position: absolute;
+	z-index: 1000;
+	color: #fff;
+	width: 100%;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	overflow-x: hidden;
+	overflow-y: auto;
+	text-align: center;
+	bottom: 50%;
+
+	.wrap {
+		max-width: 800px;
+		padding: 0 50px;
+		margin: 0 auto;
+	}
+	.scene {
+		padding: 600px 0;
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+		}
+	}
+	h1 {
+		font-size: 2.5em;
+		font-weight: 400;
+		margin: 0;
+	}
+	.arrow-up {
+		width: 50px; height: 50px;
+		background: url(../img/home/arrow-up.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0;
+		display: inline-block;
+		margin: 40px 0 0;
+	}
+}
