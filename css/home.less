@@ -40,37 +40,43 @@
 #rocket {
 	left: 50%;
 	margin-left: -65px;
+	margin-bottom: -15px;
 	position: absolute;
 	z-index: 10000;
 	bottom: 0;
 	height: 200px;
-	width: 25%;
+	width: 130px;
 	span {
-		opacity: 0;
+		position: absolute;
 		display: block;
 		height: 200px;
-		background: url(../img/home/rocket_land.svg);
-		background-size: auto 100%;
-		background-repeat: no-repeat;
-		background-position: 0;
+		width: 130px;
 	}
 	span:first-child {
-		opacity: 1;
+		height: 200px;
+		background: url(../img/home/rocket_on.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: center 0;
 	}
-	&.on {
+	span:last-child {
+		display: block;
+		height: 200px;
+		background: url(../img/home/rocket_on_2.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: center 0;
+	}
+	&.landed {
 		span:first-child {
-			opacity: 1;
-			background: url(../img/home/rocket_on.svg);
+			height: 200px;
+			background: url(../img/home/rocket_land.svg);
 			background-size: auto 100%;
 			background-repeat: no-repeat;
-			background-position: 0;
+			background-position: center 0;
 		}
-		span:nth-child(2) {
-			opacity: 0;
-			background: url(../img/home/rocket_on_2.svg);
-			background-size: auto 100%;
-			background-repeat: no-repeat;
-			background-position: 0;
+		span:last-child {
+			display: none;
 		}
 	}
 }
@@ -84,7 +90,7 @@
 	z-index: 1000;
 	color: #fff;
 	width: 100%;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
 	overflow-x: hidden;
 	overflow-y: auto;
 	text-align: center;
@@ -105,9 +111,17 @@
 		}
 	}
 	h1 {
-		font-size: 2.5em;
+		font-size: 3.2em;
+		line-height: 1.2;
 		font-weight: 400;
 		margin: 0;
+		padding-bottom: 0.2em;
+	}
+	p {
+		font-size: 1.2em;
+		line-height: 1.5;
+		font-family: 'Open Sans', Lato, Helvetica, sans-serif;
+		font-weight: 300;
 	}
 	.arrow-up {
 		width: 50px; height: 50px;
@@ -116,6 +130,6 @@
 		background-repeat: no-repeat;
 		background-position: 0;
 		display: inline-block;
-		margin: 40px 0 0;
+		margin: 30px 0 0;
 	}
 }

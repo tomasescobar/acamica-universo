@@ -1,5 +1,6 @@
 var HomeAnimation = function() {
 	t = this,
+	t.rocketIsAnimating = false,
 
 	// Elements
 	t.frame = $('#frame'),
@@ -11,8 +12,8 @@ var HomeAnimation = function() {
 	t.init = function() {
 		var winW = $(window).width(),
 		winH = $(window).height(),
-		rocketTopLimit = winH*.25,
-		titlesBottomLimit = winH*.5,
+		rocketTopLimit = winH*.15,
+		titlesBottomLimit = winH*.4,
 		scenarioH = t.titles.outerHeight()-t.titles.find('.scene').eq(0).height();
 
 		// Frame default positions
@@ -31,8 +32,9 @@ var HomeAnimation = function() {
 		$(window).resize(function() {
 			winW = $(window).width();
 			winH = $(window).height();
-			rocketTopLimit = winH*.25;
+			rocketTopLimit = winH*.15;
 			titlesBottomLimit = winH*.5;
+			// t.titles.css('marginBottom',-100+'px')
 			$(document).trigger('scroll');
 		});
 
@@ -54,14 +56,26 @@ var HomeAnimation = function() {
 
 			// Rocket launch
 			if (scrol > 30 && scrol < rocketTopLimit) {
-				t.rocket.addClass('on').css('bottom', scrol+'px');
+				t.rocket.removeClass().css('bottom', scrol+'px');
 			} else if (scrol >= 0 && scrol < rocketTopLimit) {
-				t.rocket.removeClass('on').css('bottom', scrol+'px')
+				t.rocket.addClass('landed').css('bottom', scrol+'px')
 			} else {
 				t.rocket.css('bottom', rocketTopLimit+'px');
 			}
+			t.rocketAnimation();
 
 			t.titlesFade(scrol);
+		})
+	}
+
+	t.rocketAnimation = function() {
+		if (t.rocketIsAnimating || t.rocket.hasClass('landed')) return;
+		t.rocketIsAnimating = true;
+		t.rocket.children().eq(0).fadeOut(300, function() {
+			$(this).fadeIn(300, function() {
+				t.rocketIsAnimating = false;
+				t.rocketAnimation();
+			})
 		})
 	}
 
