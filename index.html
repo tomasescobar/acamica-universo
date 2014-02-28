@@ -24,10 +24,10 @@
 
 	<header>
 		<h1 class="logo">Acamica</h1>
-		<nav class="menu">
+		<!-- <nav class="menu">
 			<li><a href="#">Cursos</a></li>
 			<li><a href="#">Ingresar</a></li>
-		</nav>
+		</nav> -->
 	</header>
 
 	<div id="frame">
@@ -35,22 +35,48 @@
 		<div id="titles">
 			<div class="wrap">
 
-				<div class="scene" id="tercero">
-					<h1>Algo más para contar</h1>
-					<p>Recorre la galaxia Web y conquista los planetas que te brindarán las herramientas que necesitas para cambiar tu futuro.</p>
-					<a class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				<div class="scene" id="queesperas">
+					<h1>¿Qué esperas?</h1>
+					<p>Accede a una carrera totalmente en línea e interactiva, donde en un lapso de <strong>sólo 4 meses</strong> puedes convertirte en un desarrollador web moderno con grandes oportunidades laborales.</p>
+					<p class="small">Déjanos tu email y te notificaremos cuando puedas inscribirte:</p>
+					<form id="notify_mail" action="/ajax/notify">
+					<div class="row leave-mail">
+						<div class="col-xs-9">
+							<div class="form-group">
+								<input type="email" placeholder="Tu dirección de email" class="form-control input-lg form-dark">
+							</div>
+						</div>
+						<div class="col-xs-3 nopad">
+							<div class="form-group">
+								<input type="submit" class="btn btn-block btn-lg btn-primary" value="Notificarme">
+							</div>
+						</div>
+					</div>
+					</form>
 				</div>
 
-				<div class="scene" id="segundo">
-					<h1>Un segundo título</h1>
-					<p>Recorre la galaxia Web y conquista los planetas que te brindarán las herramientas que necesitas para cambiar tu futuro.</p>
-					<a href="#tercero" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				<div class="scene" id="sientatufuturo">
+					<h1>Sienta las bases de tu futuro</h1>
+					<p>Nunca antes la demanda de desarrolladores web fue <strong>tan alta como hoy</strong>. ¡Ten la oportunidad de empezar a trabajar en las empresas más innovadoras de internet o anímate a emprender por tu cuenta!</p>
+					<a href="#queesperas" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				</div>
+
+				<div class="scene" id="creatuproyecto">
+					<h1>Crea tu propio proyecto</h1>
+					<p>Aprenderás paso a paso como crear un proyecto web completo, y obtendrás todos los conocimientos necesarios para poder <strong>crear el tuyo</strong>.</p>
+					<a href="#sientatufuturo" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				</div>
+
+				<div class="scene" id="nosoloastronautas">
+					<h1>Una carrera no sólo<br> para astronautas</h1>
+					<p>Pensamos cada paso con videos y ejercicios interactivos que recorren todas las tecnologías necesarias para convertirte en un desarrollador web moderno, <strong>¡desde cero!</strong></p>
+					<a href="#creatuproyecto" class="arrow-scroll-button"><i class="arrow-up"></i></a>
 				</div>
 
 				<div class="scene" id="conviertete">
 					<h1>Conviértete en<br> desarrollador web</h1>
-					<p>Recorre la galaxia Web y conquista los planetas que te brindarán las herramientas que necesitas para cambiar tu futuro.</p>
-					<a href="#segundo" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+					<p class="big">Despega tu potencial de crecimiento aprendiendo a crear para la web<br> de manera <strong>rápida, dinámica y accesible</strong>.</p>
+					<a href="#nosoloastronautas" class="arrow-scroll-button"><i class="arrow-up"></i></a>
 				</div>
 
 			</div>

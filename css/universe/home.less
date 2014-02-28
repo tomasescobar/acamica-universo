@@ -12,7 +12,7 @@
 	bottom: 0;
 	height: 5000px;
 	width: 100%;
-	background: linear-gradient(#0D1120, #00adee 42%, #e0d7c2);
+	background: linear-gradient(#0D1120, #00adee 60%, #cfc2a7);
 }
 
 #land {
@@ -32,48 +32,42 @@
 ==================================================== */
 #rocket {
 	left: 50%;
-	margin-left: -65px;
-	margin-bottom: -15px;
+	margin-left: -60px;
+	margin-bottom: 15px;
 	position: absolute;
 	z-index: 10000;
 	bottom: 0;
-	height: 200px;
-	width: 130px;
+	height: 162px;
+	width: 120px;
 	span {
 		position: absolute;
+		background: url(../../img/home/rocket.svg);
 		display: block;
-		height: 200px;
-		width: 130px;
-	}
-	span:first-child {
-		height: 200px;
-		background: url(../../img/home/rocket_on.svg);
-		background-size: auto 100%;
+		height: 204px;
+		width: 120px;
+		background-size: 480px auto;
 		background-repeat: no-repeat;
-		background-position: center 0;
-		z-index: 2;
-	}
-	span:last-child {
-		display: block;
-		height: 200px;
-		background: url(../../img/home/rocket_on_2.svg);
-		background-size: auto 100%;
-		background-repeat: no-repeat;
-		background-position: center 0;
-		z-index: 1;
+		background-position: 100% 0;
+		-webkit-animation: rocket-fire 0.25s steps(4) infinite;
 	}
 	&.landed {
-		span:first-child {
-			height: 200px;
-			background: url(../../img/home/rocket_land.svg);
-			background-size: auto 100%;
+		span {
+			display: block;
+			background: url(../../img/home/rocket_landed.svg);
+			background-size: 120px auto;
 			background-repeat: no-repeat;
-			background-position: center 0;
+			background-position: 0 0;
+			-webkit-animation: none;
 		}
 		span:last-child {
 			display: none;
 		}
 	}
+}
+
+@-webkit-keyframes rocket-fire {
+  0%   { background-position: -360px 0; }
+  100%   { background-position: 120px 0; }
 }
 
 
@@ -85,24 +79,26 @@
 	z-index: 1000;
 	color: #fff;
 	width: 100%;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 	overflow-x: hidden;
 	overflow-y: auto;
 	text-align: center;
+	bottom: 0;
 
 	.wrap {
-		max-width: 800px;
+		max-width: 900px;
 		padding: 0 50px;
 		margin: 0 auto;
 	}
 	.scene {
-		padding: 550px 0;
-		transition: all 1s;
-		&:first-child {
-			padding-top: 0;
-		}
+		padding: 0 0 1000px;
+		-webkit-transition: all 2s;
+		opacity: 1;
 		&:last-child {
 			padding-bottom: 0;
+		}
+		&.hidden {
+			opacity: 0;
 		}
 	}
 	h1 {
@@ -117,6 +113,10 @@
 		line-height: 1.5;
 		font-family: 'Open Sans', Lato, Helvetica, sans-serif;
 		font-weight: 300;
+		&.small {
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.7);
+		}
 	}
 	.arrow-up {
 		width: 50px; height: 50px;
@@ -210,4 +210,24 @@
 		opacity: 0.55;
 		margin-top: -450px;
 	}
+}
+
+input.form-dark {
+	background-color: transparent;
+	color: #fff;
+	line-height: 2;
+	border-color: rgba(255, 255, 255, 0.8);
+	&::-webkit-input-placeholder, &::-moz-placeholder, :-ms-input-placeholder {
+		color: rgba(255, 255, 255, 0.5);
+	}
+}
+.btn-lg, .form-control {
+	border-radius: 3px;
+}
+.leave-mail {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.nopad {
+	padding: 0 !important;
 }
