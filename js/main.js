@@ -15,6 +15,7 @@ var HomeAnimation = function() {
 	t.clouds = $('#clouds').children('span'),
 	t.cloud_count = t.clouds.length,
 	t.endplanet = $('#end-planet'),
+	t.planets = $('#planets'),
 
 	t.init = function() {
 
@@ -38,7 +39,7 @@ var HomeAnimation = function() {
 		})
 
 		// Scroll arrows click
-		t.titles.find('.arrow-scroll-button').click(function(e) {
+		t.titles.find('.arrow-scroll-button').click(function() {
 			window.location.hash == this.href ? t.hashEvent() : null;
 		});
 
@@ -53,6 +54,7 @@ var HomeAnimation = function() {
 				landed_up = false;
 				t.land.css('top','0px');
 				t.sky.css('bottom','0px');
+				t.planets.css('bottom','0px');
 				t.titles.css('bottom',-t.wvalues.titlesInitialBottom+'px');
 				t.rocket.addClass('landed').css('bottom', '0px');
 				return false;
@@ -70,7 +72,6 @@ var HomeAnimation = function() {
 				t.rocket.css('bottom',t.wvalues.rocketTopLimit+'px')
 				landed_up = false;
 			}
-			// console.log(scrol)
 
 			// Global elements (present in all scenes)
 			t.sky.css('bottom',-scrol+'px');
@@ -194,6 +195,7 @@ var HomeAnimation = function() {
     	var form = $(form);
 		if (!response.error) {
 			form.find('.form-group').eq(0).removeClass('error').addClass('has-success');
+			$(document).trigger('conversion');
 		} else {
 			form.find('.form-group').eq(0).addClass('has-error');
 			form.find('.error-display').html(response.errormsg).show()

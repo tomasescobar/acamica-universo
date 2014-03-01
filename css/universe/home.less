@@ -258,6 +258,70 @@
 	}
 }
 
+/* ====================================================
+	PLANETS
+==================================================== */
+#planets {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 3000px;
+	span {
+		position: absolute;
+		display: block;
+		background: url(../../img/home/planet-1.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+		&.planet2 {
+			background: url(../../img/home/planet-2.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+		&.planet3 {
+			background: url(../../img/home/planet-3.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+		&.moon {
+			background: url(../../img/home/moon.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+	}
+	span:first-child {
+		width: 100%;
+		height: 10%;
+		left: 20%;
+		margin-top: 80px;
+	}
+	span:nth-child(2) {
+		width: 100%;
+		height: 22%;
+		left: 60%;
+		margin-top: 100px;
+	}
+	span:nth-child(3) {
+		width: 100%;
+		height: 14%;
+		left: 80%;
+		margin-top: 230px;
+	}
+	span:nth-child(4) {
+		width: 100%;
+		height: 14%;
+		left: 80%;
+		margin-top: 230px;
+	}
+}
+
+/* ====================================================
+	HOME INPUTS
+==================================================== */
+
 input.input-home {
 	border-color: #fff;
 	&:focus {
@@ -278,5 +342,9 @@ input.input-home {
 	padding-left: 0 !important;
 }
 .error-display {
+	display: none;
+}
+
+#tracking {
 	display: none;
 }
