@@ -64,6 +64,7 @@ var HomeAnimation = function() {
 				}, 1000, function() {
 					t.rocket.removeClass().addClass('land-up-stand')
 				})
+				return false;
 			} else if (landed_up && sw < docH) {
 				t.rocket.stop(true).removeClass();
 				t.rocket.css('bottom',t.wvalues.rocketTopLimit+'px')
@@ -99,7 +100,7 @@ var HomeAnimation = function() {
 		})
 
 		// Form mail
-		$('#notify_mail').on('submit', function() {
+		$('#notify-mail').on('submit', function() {
 			t.submitForm(this, t.notifyFormResponse);
 			return false;
 		});

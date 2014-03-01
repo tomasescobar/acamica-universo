@@ -26,7 +26,7 @@
 		<h1 class="logo">Acamica</h1>
 		<nav class="menu">
 			<!-- <li><a href="#">Cursos</a></li> -->
-			<li><a href="/login">Ingresar</a></li>
+			<li id="login-button"><a href="/login">Ingresar</a></li>
 		</nav>
 	</header>
 
@@ -39,11 +39,11 @@
 					<h1>¿Qué esperas?</h1>
 					<p>Accede a una carrera totalmente en línea e interactiva, donde en un lapso de <strong>sólo 4 meses</strong> puedes convertirte en un desarrollador web moderno con grandes oportunidades laborales.</p>
 					<p class="small">Déjanos tu email y te notificaremos cuando puedas inscribirte:</p>
-					<form id="notify_mail" action="/ajax/notify">
+					<form id="notify-mail" action="http://www.acamica.com/ajax/notify_email">
 					<div class="row leave-mail">
 						<div class="col-xs-9 nopad-left">
 							<div class="form-group">
-								<input type="email" placeholder="Tu dirección de email" class="form-control input-lg input-home">
+								<input type="email" placeholder="Tu dirección de email" class="form-control input-lg input-home" name="email">
 							</div>
 						</div>
 						<div class="col-xs-3 nopad">
@@ -107,8 +107,8 @@
 	</div>
 
 	<script type="text/javascript" src="js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="bower_components/jquery.scrollTo/jquery.scrollTo.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
 
 </body>
 </html>
