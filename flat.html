@@ -6,16 +6,16 @@
     <meta name="description" content=""/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+    <link href="css/vendor/bootstrap.css" rel="stylesheet">
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,100|Lato:100,300,900' rel='stylesheet' type='text/css'>
     <!-- Loading Bootstrap -->
-    <link href="css/vendor/bootstrap.css" rel="stylesheet">
 
     <!-- Loading Flat UI -->
     <link href="css/vendor/flat-ui.css" rel="stylesheet">
     <link href="css/flat/main.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
     <!--[if lt IE 9]>
@@ -229,29 +229,37 @@
     
     <!-- Load JS here for greater good =============================-->
     <script src="js/jquery-2.1.0.min.js"></script>
-    
     <script>
+      $(window).on('load', function(){
 
-      var acamica = {};
+          var acamica = {};
 
-      acamica.init = (function(){
+          acamica.init = (function(){
 
-        $('#presentation').height($(window).height());
+          $('#presentation').height($(window).height());
 
-        // Add style header
-        $(document).on('scroll', function(e) {
-          var scrol = $(this).scrollTop();
-          console.log("scroll es " + scrol);
-        });
+          // Add style header
+          $(document).on('scroll', function(e) {
+            var scrol = $(this).scrollTop();
+            if(scrol > $('#presentation').height()-70){
+              $('header').addClass('fixed')
+            } else {
+              $('header').removeClass('fixed')
+            }
+          });
 
-        // Scroll To
-        $('#scrollDown').on('click', function(e) {
-          e.preventDefault();
-          $.scrollTo('#learn');
-        });
+          // Scroll To
+          $('#scrollDown').on('click', function(e) {
+            e.preventDefault();
 
-      }());
+            var body = $("html, body"),
+                height = $(window).height() - 60;
+           
+            body.animate({scrollTop: height}, '500', 'swing');
+          });
 
+        }());
+      });
     </script>
   </body>
 </html>
