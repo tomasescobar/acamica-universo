@@ -46,7 +46,7 @@ var HomeAnimation = function() {
 
 		// Titles scroll event
 		$(document).on('scroll', function(e) {
-			var scrol = $(this).scrollTop();
+			var scrol = $(this).scrollTop(), height = $(this).outerHeight();
 
 			var sw = scrol+t.wvalues.winH, docH = $(this).outerHeight()-30;
 			if (scrol <= 0) {
@@ -56,7 +56,7 @@ var HomeAnimation = function() {
 				t.titles.css('bottom',-t.wvalues.titlesInitialBottom+'px');
 				t.rocket.addClass('landed').css('bottom', '0px');
 				return false;
-			} else if (!landed_up && scrol >= $(this).outerHeight()-50) {
+			} else if (!landed_up && scrol >= height-t.wvalues.winH) {
 				landed_up = true;
 				t.rocket.removeClass().addClass('land-up');
 				t.rocket.animate({
@@ -66,6 +66,7 @@ var HomeAnimation = function() {
 				})
 			} else if (landed_up && sw < docH) {
 				t.rocket.stop(true).removeClass();
+				t.rocket.css('bottom',t.wvalues.rocketTopLimit+'px')
 				landed_up = false;
 			}
 			// console.log(scrol)
