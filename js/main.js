@@ -14,6 +14,7 @@ var HomeAnimation = function() {
 	t.scenes_count = t.scenes.length,
 	t.clouds = $('#clouds').children('span'),
 	t.cloud_count = t.clouds.length,
+	t.endplanet = $('#end-planet'),
 
 	t.init = function() {
 
@@ -41,15 +42,31 @@ var HomeAnimation = function() {
 			window.location.hash == this.href ? t.hashEvent() : null;
 		});
 
+		var landed_up = false;
+
 		// Titles scroll event
 		$(document).on('scroll', function(e) {
 			var scrol = $(this).scrollTop();
 
-			if (scrol < 0 || scrol > 6000) {
+			var sw = scrol+t.wvalues.winH, docH = $(this).outerHeight()-30;
+			if (scrol <= 0) {
+				landed_up = false;
 				t.land.css('top','0px');
 				t.sky.css('bottom','0px');
 				t.titles.css('bottom',-t.wvalues.titlesInitialBottom+'px');
+				t.rocket.addClass('landed').css('bottom', '0px');
 				return false;
+			} else if (!landed_up && scrol >= $(this).outerHeight()-50) {
+				landed_up = true;
+				t.rocket.removeClass().addClass('land-up');
+				t.rocket.animate({
+					bottom: (t.wvalues.winH-t.endplanet.outerHeight()-50),
+				}, 1000, function() {
+					t.rocket.removeClass().addClass('land-up-stand')
+				})
+			} else if (landed_up && sw < docH) {
+				t.rocket.stop(true).removeClass();
+				landed_up = false;
 			}
 			// console.log(scrol)
 
@@ -57,21 +74,14 @@ var HomeAnimation = function() {
 			t.sky.css('bottom',-scrol+'px');
 			t.titles.css('bottom',(-scrol-t.wvalues.titlesInitialBottom)+'px');
 
-			// Scene one
-			if (t.scene == 1) {
-				// Land hide
-				t.land.css('top',scrol+'px');
-				// Rocket launch
-				if (scrol > 20 && scrol < t.wvalues.rocketTopLimit) {
-					t.rocket.removeClass().css('bottom', scrol+'px');
-				} else if (scrol >= 0 && scrol < t.wvalues.rocketTopLimit) {
-					t.rocket.addClass('landed').css('bottom', scrol+'px')
-				} else {
-					t.rocket.css('bottom', t.wvalues.rocketTopLimit+'px');
-				}
+			// Land hide
+			t.land.css('top',scrol+'px');
+			// Rocket launch
+			if (scrol > 20 && scrol < t.wvalues.rocketTopLimit) {
+				t.rocket.removeClass().css('bottom', scrol+'px');
+			} else if (scrol <= 20) {
+				t.rocket.addClass('landed').css('bottom', '0px')
 			}
-			// Rocket animation
-			// t.rocketAnimation();
 
 			// Clouds
 			if (t.scene < 3) {
@@ -82,7 +92,9 @@ var HomeAnimation = function() {
 			}
 
 			// Titles
-			t.titlesFade(scrol);
+			// t.titlesFade(scrol);
+		}).on('scrollstop', function() {
+			console.log('end')
 		})
 
 		// Form mail
@@ -108,9 +120,10 @@ var HomeAnimation = function() {
 		var vars = {
 			winW: $(window).width(),
 			winH: $(window).height(),
-			rocketTopLimit: $(window).height()*.15,
+			rocketTopLimit: $(window).height()*.1,
 			titlesTopLimit: $(window).height()*.2,
 			titlesInitialBottom: $(window).height()*.2+(t.scenes.last().outerHeight()),
+			pageH: $(document).outerHeight()
 		}
 
 		// Frame default positions
@@ -132,17 +145,6 @@ var HomeAnimation = function() {
 		return vars;
 	}
 
-	t.rocketAnimation = function() {
-		if (t.rocketIsAnimating || t.rocket.hasClass('landed')) return;
-		t.rocketIsAnimating = true;
-		t.rocket.children().eq(0).fadeOut(2, function() {
-			$(this).fadeIn(3, function() {
-				t.rocketIsAnimating = false;
-				t.rocketAnimation();
-			})
-		})
-	}
-
 	// Fade titles as we go up
 	t.titlesFade = function(scrol) {
 		console.log('Offset top: '+t.scenes.last().offset().top+' - Scrolltop: '+scrol+' - Toplimit:'+t.wvalues.titlesTopLimit)
@@ -161,7 +163,7 @@ var HomeAnimation = function() {
     	f.on('submit.form',function() {
 	    	return false;
     	});
-    	$('.formresponse',f).hide()
+    	f.find('.error-display').hide()
 
     	var bot = $('input[type="submit"]',f);
     	bot.attr('disabled','disabled');
@@ -192,6 +194,7 @@ var HomeAnimation = function() {
 			form.find('.form-group').eq(0).removeClass('error').addClass('has-success');
 		} else {
 			form.find('.form-group').eq(0).addClass('has-error');
+			form.find('.error-display').html(response.errormsg).show()
 		}
 	}
 

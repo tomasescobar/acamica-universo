@@ -24,33 +24,36 @@
 
 	<header>
 		<h1 class="logo">Acamica</h1>
-		<!-- <nav class="menu">
-			<li><a href="#">Cursos</a></li>
-			<li><a href="#">Ingresar</a></li>
-		</nav> -->
+		<nav class="menu">
+			<!-- <li><a href="#">Cursos</a></li> -->
+			<li><a href="/login">Ingresar</a></li>
+		</nav>
 	</header>
 
 	<div id="frame">
 
 		<div id="titles">
 			<div class="wrap">
-
+				
 				<div class="scene" id="queesperas">
 					<h1>¿Qué esperas?</h1>
 					<p>Accede a una carrera totalmente en línea e interactiva, donde en un lapso de <strong>sólo 4 meses</strong> puedes convertirte en un desarrollador web moderno con grandes oportunidades laborales.</p>
 					<p class="small">Déjanos tu email y te notificaremos cuando puedas inscribirte:</p>
 					<form id="notify_mail" action="/ajax/notify">
 					<div class="row leave-mail">
-						<div class="col-xs-9">
+						<div class="col-xs-9 nopad-left">
 							<div class="form-group">
-								<input type="email" placeholder="Tu dirección de email" class="form-control input-lg form-dark">
+								<input type="email" placeholder="Tu dirección de email" class="form-control input-lg input-home">
 							</div>
 						</div>
 						<div class="col-xs-3 nopad">
 							<div class="form-group">
-								<input type="submit" class="btn btn-block btn-lg btn-primary" value="Notificarme">
+								<input type="submit" class="btn btn-block btn-lg btn-danger" value="Notificarme">
 							</div>
 						</div>
+					</div>
+					<div class="row leave-mail error-display">
+						<div class="alert alert-danger">Ha ocurrido un error</div>
 					</div>
 					</form>
 				</div>
@@ -82,14 +85,14 @@
 			</div>
 		</div>	
 
-		<div id="sky"></div>
+		<div id="sky">
+			<div id="star-sky"></div>
+			<div id="end-planet"></div>
+		</div>
 
 		<div id="land"></div>
 
-		<div id="rocket" class="landed">
-			<span></span>
-			<span></span>
-		</div>
+		<div id="rocket" class="landed"></div>
 
 		<div id="clouds">
 			<span class="cloud2" data-speed="0.5"></span>

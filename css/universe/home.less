@@ -7,12 +7,13 @@
 	height: 100%;
 	width: 100%;
 }
+
 #sky {
 	position: absolute;
 	bottom: 0;
 	height: 5000px;
 	width: 100%;
-	background: linear-gradient(#0D1120, #00adee 60%, #cfc2a7);
+	background: linear-gradient(#06070C, #0A0D16 3%, #0D1120 20%, #00adee 60%, #cfc2a7);
 }
 
 #land {
@@ -26,48 +27,86 @@
 	background-repeat: no-repeat;
 }
 
+#star-sky {
+	position: relative;
+	bottom: 0;
+	height: 35%;
+	width: 100%;
+	opacity: 0.5;
+	background: url(../../img/home/star-sky.svg);
+	background-size: auto 100%;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#end-planet {
+	position: absolute;
+	top: 0;
+	height: 10%;
+	width: 100%;
+	background: url(../../img/home/end-planet.svg);
+	background-size: auto 100%;
+	background-position: top center;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
 
 /* ====================================================
 	ROCKET
 ==================================================== */
 #rocket {
 	left: 50%;
-	margin-left: -60px;
-	margin-bottom: 15px;
+	margin-left: -50px;
+	margin-bottom: -30px;
 	position: absolute;
 	z-index: 10000;
 	bottom: 0;
-	height: 162px;
-	width: 120px;
-	span {
-		position: absolute;
-		background: url(../../img/home/rocket.svg);
-		display: block;
-		height: 204px;
-		width: 120px;
-		background-size: 480px auto;
-		background-repeat: no-repeat;
-		background-position: 100% 0;
-		-webkit-animation: rocket-fire 0.25s steps(4) infinite;
-	}
+	position: absolute;
+	background: url(../../img/home/rocket.svg);
+	display: block;
+	height: 204px;
+	width: 100px;
+	background-size: 400px auto;
+	background-repeat: no-repeat;
+	background-position: 100% 0;
+	-webkit-animation: rocket-fire 0.25s steps(4) infinite;
+	-webkit-transition: -webkit-transform 1s;
 	&.landed {
-		span {
-			display: block;
-			background: url(../../img/home/rocket_landed.svg);
-			background-size: 120px auto;
-			background-repeat: no-repeat;
-			background-position: 0 0;
-			-webkit-animation: none;
-		}
-		span:last-child {
-			display: none;
-		}
+		display: block;
+		background: url(../../img/home/rocket-landed.svg);
+		background-size: 100px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		-webkit-animation: none;
+	}
+	&.land-up {
+		-webkit-animation: none;
+		display: block;
+		background: url(../../img/home/rocket.svg);
+		background-size: 400px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		margin-top: -70px;
+		-webkit-transition: -webkit-transform 0.6s;
+		-webkit-transform: rotate(180deg);
+	}
+	&.land-up-stand {
+		-webkit-animation: none;
+		display: block;
+		background: url(../../img/home/rocket-landed.svg);
+		background-size: 100px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		margin-top: -75px;
+		-webkit-transition: none;
+		-webkit-transform: rotate(180deg);
 	}
 }
 
 @-webkit-keyframes rocket-fire {
-  0%   { background-position: -360px 0; }
-  100%   { background-position: 120px 0; }
+  0%   { background-position: -300px 0; }
+  100%   { background-position: 100px 0; }
 }
 
 
@@ -92,7 +131,7 @@
 	}
 	.scene {
 		padding: 0 0 1000px;
-		-webkit-transition: all 2s;
+		-webkit-transition: opacity 2s;
 		opacity: 1;
 		&:last-child {
 			padding-bottom: 0;
@@ -115,7 +154,7 @@
 		font-weight: 300;
 		&.small {
 			font-size: 1em;
-			color: rgba(255, 255, 255, 0.7);
+			color: rgba(255, 255, 255, 0.8);
 		}
 	}
 	.arrow-up {
@@ -132,6 +171,13 @@
 			opacity: 1;
 		}
 	}
+	.alert {
+		font-size: 15px;
+		text-shadow: none;
+		text-align: left;
+		padding: 10px 15px;
+		border: 1px solid;
+	}
 }
 
 /* ====================================================
@@ -144,18 +190,18 @@
 	span {
 		position: absolute;
 		display: block;
-		background: url(../../img/home/cloud_1.svg);
+		background: url(../../img/home/cloud-1.svg);
 		background-size: auto 100%;
 		background-repeat: no-repeat;
 		background-position: 0;
 		&.cloud2 {
-			background: url(../../img/home/cloud_2.svg);
+			background: url(../../img/home/cloud-2.svg);
 			background-size: auto 100%;
 			background-repeat: no-repeat;
 			background-position: 0;
 		}
 		&.cloud3 {
-			background: url(../../img/home/cloud_3.svg);
+			background: url(../../img/home/cloud-3.svg);
 			background-size: auto 100%;
 			background-repeat: no-repeat;
 			background-position: 0;
@@ -212,13 +258,10 @@
 	}
 }
 
-input.form-dark {
-	background-color: transparent;
-	color: #fff;
-	line-height: 2;
-	border-color: rgba(255, 255, 255, 0.8);
-	&::-webkit-input-placeholder, &::-moz-placeholder, :-ms-input-placeholder {
-		color: rgba(255, 255, 255, 0.5);
+input.input-home {
+	border-color: #fff;
+	&:focus {
+		border-color: #337C46;
 	}
 }
 .btn-lg, .form-control {
@@ -230,4 +273,10 @@ input.form-dark {
 }
 .nopad {
 	padding: 0 !important;
+}
+.nopad-left {
+	padding-left: 0 !important;
+}
+.error-display {
+	display: none;
 }
