@@ -7,19 +7,13 @@
 	height: 100%;
 	width: 100%;
 }
+
 #sky {
 	position: absolute;
 	bottom: 0;
 	height: 5000px;
 	width: 100%;
-	background: linear-gradient(#0D1120, #00adee 42%, #e0d7c2);
-}
-#universe {
-	position: absolute;
-	bottom: 2500px;
-	height: 1500px;
-	width: 100%;
-	background: #FFF;
+	background: linear-gradient(#06070C, #0A0D16 3%, #0D1120 20%, #00adee 60%, #cfc2a7);
 }
 
 #land {
@@ -33,52 +27,86 @@
 	background-repeat: no-repeat;
 }
 
+#star-sky {
+	position: relative;
+	bottom: 0;
+	height: 35%;
+	width: 100%;
+	opacity: 0.5;
+	background: url(../../img/home/star-sky.svg);
+	background-size: auto 100%;
+	background-position: top center;
+	background-repeat: no-repeat;
+}
+
+#end-planet {
+	position: absolute;
+	top: 0;
+	height: 10%;
+	width: 100%;
+	background: url(../../img/home/end-planet.svg);
+	background-size: 100% auto;
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
 
 /* ====================================================
 	ROCKET
 ==================================================== */
 #rocket {
 	left: 50%;
-	margin-left: -65px;
-	margin-bottom: -15px;
+	margin-left: -50px;
+	margin-bottom: -30px;
 	position: absolute;
 	z-index: 10000;
 	bottom: 0;
-	height: 200px;
-	width: 130px;
-	span {
-		position: absolute;
-		display: block;
-		height: 200px;
-		width: 130px;
-	}
-	span:first-child {
-		height: 200px;
-		background: url(../../img/home/rocket_on.svg);
-		background-size: auto 100%;
-		background-repeat: no-repeat;
-		background-position: center 0;
-	}
-	span:last-child {
-		display: block;
-		height: 200px;
-		background: url(../../img/home/rocket_on_2.svg);
-		background-size: auto 100%;
-		background-repeat: no-repeat;
-		background-position: center 0;
-	}
+	position: absolute;
+	background: url(../../img/home/rocket.svg);
+	display: block;
+	height: 204px;
+	width: 100px;
+	background-size: 400px auto;
+	background-repeat: no-repeat;
+	background-position: 100% 0;
+	-webkit-animation: rocket-fire 0.25s steps(4) infinite;
+	-webkit-transition: -webkit-transform 1s;
 	&.landed {
-		span:first-child {
-			height: 200px;
-			background: url(../../img/home/rocket_land.svg);
-			background-size: auto 100%;
-			background-repeat: no-repeat;
-			background-position: center 0;
-		}
-		span:last-child {
-			display: none;
-		}
+		display: block;
+		background: url(../../img/home/rocket-landed.svg);
+		background-size: 100px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		-webkit-animation: none;
 	}
+	&.land-up {
+		-webkit-animation: none;
+		display: block;
+		background: url(../../img/home/rocket.svg);
+		background-size: 400px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		margin-top: -70px;
+		-webkit-transition: -webkit-transform 0.6s;
+		-webkit-transform: rotate(180deg);
+	}
+	&.land-up-stand {
+		-webkit-animation: none;
+		display: block;
+		background: url(../../img/home/rocket-landed.svg);
+		background-size: 100px auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		margin-top: -75px;
+		-webkit-transition: none;
+		-webkit-transform: rotate(180deg);
+	}
+}
+
+@-webkit-keyframes rocket-fire {
+  0%   { background-position: -300px 0; }
+  100%   { background-position: 100px 0; }
 }
 
 
@@ -90,24 +118,26 @@
 	z-index: 1000;
 	color: #fff;
 	width: 100%;
-	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 	overflow-x: hidden;
 	overflow-y: auto;
 	text-align: center;
-	bottom: 50%;
+	bottom: 0;
 
 	.wrap {
-		max-width: 800px;
+		max-width: 900px;
 		padding: 0 50px;
 		margin: 0 auto;
 	}
 	.scene {
-		padding: 600px 0;
-		&:first-child {
-			padding-top: 0;
-		}
+		padding: 0 0 1000px;
+		-webkit-transition: opacity 2s;
+		opacity: 1;
 		&:last-child {
 			padding-bottom: 0;
+		}
+		&.hidden {
+			opacity: 0;
 		}
 	}
 	h1 {
@@ -122,6 +152,10 @@
 		line-height: 1.5;
 		font-family: 'Open Sans', Lato, Helvetica, sans-serif;
 		font-weight: 300;
+		&.small {
+			font-size: 1em;
+			color: rgba(255, 255, 255, 0.8);
+		}
 	}
 	.arrow-up {
 		width: 50px; height: 50px;
@@ -131,5 +165,186 @@
 		background-position: 0;
 		display: inline-block;
 		margin: 30px 0 0;
+		opacity: 0.8;
+		transition: all 0.2s;
+		&:hover {
+			opacity: 1;
+		}
 	}
+	.alert {
+		font-size: 15px;
+		text-shadow: none;
+		text-align: left;
+		padding: 10px 15px;
+		border: 1px solid;
+	}
+}
+
+/* ====================================================
+	CLOUDS
+==================================================== */
+#clouds {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	span {
+		position: absolute;
+		display: block;
+		background: url(../../img/home/cloud-1.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+		&.cloud2 {
+			background: url(../../img/home/cloud-2.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+		&.cloud3 {
+			background: url(../../img/home/cloud-3.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+	}
+	span:first-child {
+		width: 100%;
+		height: 10%;
+		left: 20%;
+		opacity: 0.8;
+		margin-top: 80px;
+	}
+	span:nth-child(2) {
+		width: 100%;
+		height: 22%;
+		left: 60%;
+		opacity: 0.3;
+		margin-top: 100px;
+	}
+	span:nth-child(3) {
+		width: 100%;
+		height: 14%;
+		left: 80%;
+		opacity: 0.9;
+		margin-top: 230px;
+	}
+	span:nth-child(4) {
+		width: 100%;
+		height: 18%;
+		left: 10%;
+		opacity: 0.45;
+		margin-top: 280px;
+	}
+	span:nth-child(5) {
+		width: 100%;
+		height: 15%;
+		left: 30%;
+		opacity: 0.9;
+		margin-top: -150px;
+	}
+	span:nth-child(6) {
+		width: 100%;
+		height: 18%;
+		left: 70%;
+		opacity: 0.7;
+		margin-top: -300px;
+	}
+	span:nth-child(7) {
+		width: 100%;
+		height: 12%;
+		left: 10%;
+		opacity: 0.55;
+		margin-top: -450px;
+	}
+}
+
+/* ====================================================
+	PLANETS
+==================================================== */
+#planets {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 3000px;
+	span {
+		position: absolute;
+		display: block;
+		background: url(../../img/home/planet-1.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+		&.planet2 {
+			background: url(../../img/home/planet-2.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+		&.planet3 {
+			background: url(../../img/home/planet-3.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+		&.moon {
+			background: url(../../img/home/moon.svg);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: 0;
+		}
+	}
+	span:first-child {
+		width: 100%;
+		height: 10%;
+		left: 20%;
+		margin-top: 80px;
+	}
+	span:nth-child(2) {
+		width: 100%;
+		height: 22%;
+		left: 60%;
+		margin-top: 100px;
+	}
+	span:nth-child(3) {
+		width: 100%;
+		height: 14%;
+		left: 80%;
+		margin-top: 230px;
+	}
+	span:nth-child(4) {
+		width: 100%;
+		height: 14%;
+		left: 80%;
+		margin-top: 230px;
+	}
+}
+
+/* ====================================================
+	HOME INPUTS
+==================================================== */
+
+input.input-home {
+	border-color: #fff;
+	&:focus {
+		border-color: #5D7028;
+	}
+}
+.btn-lg, .form-control {
+	border-radius: 3px;
+}
+.leave-mail {
+	max-width: 600px;
+	margin: 0 auto;
+}
+.nopad {
+	padding: 0 !important;
+}
+.nopad-left {
+	padding-left: 0 !important;
+}
+.error-display {
+	display: none;
+}
+
+#tracking {
+	display: none;
 }
