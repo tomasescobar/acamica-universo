@@ -6,6 +6,7 @@ $(document).ready(function() {
 	$('#login-button').one('click', function() {
 		console.log('Click login button')
 	})
+	
 	var midscroll = false;
 	$(document).on('scroll.fullevent', function() {
 		var height = $(this).outerHeight()-$(window).outerHeight();

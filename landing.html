@@ -2,8 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Acámica - Bootcamp</title>
-    <meta name="description" content=""/>
+    <title>Acámica - Conviértete en desarrollador web</title>
+    <meta name="description" content="Despega tu potencial de crecimiento aprendiendo a crear para la web."/>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
     <link href="css/vendor/bootstrap.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 
     <!-- Loading Flat UI -->
     <link href="css/vendor/flat-ui.css" rel="stylesheet">
-    <link href="css/flat/main.css" rel="stylesheet">
+    <link href="css/landing/main.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="favicon.ico">
 
@@ -28,8 +28,8 @@
     <header>
       <h1 class="logo">Acamica</h1>
       <nav class="menu">
-        <li><a href="http://www.acamica.com/cursos">Cursos</a></li>
-        <li><a href="http://www.acamica.com/login">Ingresar</a></li>
+        <!-- <li><a href="http://www.acamica.com/cursos">Cursos</a></li> -->
+        <li id="login-button"><a href="http://www.acamica.com/login">Ingresar</a></li>
       </nav>
     </header>
 
@@ -38,15 +38,15 @@
         <div class="wrap">
           <h2 class="lead">Conviértete en desarrollador web</h2>
           <p class="lead">Despega tu potencial de crecimiento aprendiendo a crear para la web.</p>
-          <form class="actions" action="" method="post">
-            <div class="col-xs-8 box">
+          <!-- <form id="notify-mail-top" class="actions"  action="http://www.acamica.com/ajax/notify_email" method="post">
+            <div class="col-xs-8 form-group">
               <input type="text" value="" placeholder="Tu dirección de email" class="form-control">
             </div>
-            <div class="col-xs-4 box">
-              <input type="button" class="btn btn-block btn-lg btn-danger" value="Notificarme">
+            <div class="col-xs-4 form-group">
+              <input type="submit" class="btn btn-block btn-lg btn-danger" value="Notificarme">
             </div>
-            <a href="#benefits" id="scrollDown" class="arrow-scroll-button"><i class="arrow-up"></i></a>
-          </form>
+          </form> -->
+          <a href="#benefits" id="scrollDown" class="arrow-scroll-button"><i class="arrow-up"></i></a>
         </div>
       </section>
       <section id="learn">
@@ -126,28 +126,28 @@
         </div>
         <div class="col-xs-6">
           <div class="wrap">
-            <img src="img/home-flat/user1.jpg" class="figure" width="75" height="75" />
+            <img src="img/landing/user1.jpg" class="figure" width="75" height="75" />
             <cite>Me enamoré de Acamica. Su plataforma es excelente</cite>
             <p class="user">Cristhian Duran &nbsp;<a href="https://twitter.com/DuranCristhian">@DuranCristhian</a><p>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="wrap">
-            <img src="img/home-flat/user2.jpg" class="figure" width="75" height="75" />
+            <img src="img/landing/user2.jpg" class="figure" width="75" height="75" />
             <cite>En definitiva, la plataforma de Acamica es una de las mejores para aprendizaje online que he usado!</cite>
             <p class="user">Daniel Pacheco &nbsp;<a href="https://twitter.com/DafzPacheco">@DafzPacheco</a><p>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="wrap">
-            <img src="img/home-flat/user3.jpg" class="figure" width="75" height="75" />
+            <img src="img/landing/user3.jpg" class="figure" width="75" height="75" />
             <cite>La plataforma de Acamica es lo mejor que he visto en cursos online en mucho tiempo.</cite>
             <p class="user">Iván Hernández &nbsp;<a href="https://twitter.com/Fvaco">@Fvaco</a><p>
           </div>
         </div>
         <div class="col-xs-6">
           <div class="wrap">
-            <img src="img/home-flat/user4.jpg" class="figure" width="75" height="75" />
+            <img src="img/landing/user4.jpg" class="figure" width="75" height="75" />
             <cite>El Elearning ya no es montar un Moodle con un par de flash con prerequisitos y listo. Un ejemplo claro de innovación es Acamica.</cite>
             <p class="user">Esteban Geros &nbsp;<a href="https://twitter.com/EstebanGeros">@EstebanGeros</a><p>
           </div>
@@ -158,13 +158,16 @@
             <h3 class="lead">¿Qué esperas?</h3>
         </div>
         <p class="info lead">Déjanos tu email y te notificaremos cuando puedas inscribirte.</p>
-        <form class="actions" action="" method="post">
+        <form id="notify-mail" class="actions" action="http://www.acamica.com/ajax/notify_email" method="post">
           <div class="wrap">
-            <div class="col-xs-8">
-                <input type="text" value="" placeholder="Tu dirección de email" class="form-control">
+            <div class="col-xs-9 form-group">
+                <input type="email" name="email" placeholder="Tu dirección de email" class="form-control">
             </div>
-            <div class="col-xs-4">
-                <input type="button" class="btn btn-block btn-lg btn-danger" value="Notificarme">
+            <div class="col-xs-3 form-group">
+                <input type="submit" class="btn btn-block btn-lg btn-danger" value="Notificarme">
+            </div>
+            <div class="col-xs-12 leave-mail error-display" style="display:none">
+              <div class="alert alert-danger">Ha ocurrido un error</div>
             </div>
           </div>
           </form>
@@ -172,7 +175,7 @@
     </main>
 
     <footer>
-      <div class="container">
+      <!-- <div class="container">
         <div class="col-xs-4">
           <div class="wrap">
             <h4>Acámica</h4>
@@ -221,45 +224,18 @@
             </ul>
           </div>
         </div>
-      </div>
+      </div> -->
       <div class="copy">
         <p>© 2014 Acamica. Todos los derechos reservados</p>
       </div>
     </footer>
     
     <!-- Load JS here for greater good =============================-->
-    <script src="js/jquery-2.1.0.min.js"></script>
-    <script>
-      $(window).on('load', function(){
+    <div id="tracking"></div>
 
-          var acamica = {};
+    <script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="js/main-landing.js"></script>
+    <script type="text/javascript" src="js/events.js"></script>
 
-          acamica.init = (function(){
-
-          $('#presentation').height($(window).height());
-
-          // Add style header
-          $(document).on('scroll', function(e) {
-            var scrol = $(this).scrollTop();
-            if(scrol > $('#presentation').height()-70){
-              $('header').addClass('fixed')
-            } else {
-              $('header').removeClass('fixed')
-            }
-          });
-
-          // Scroll To
-          $('#scrollDown').on('click', function(e) {
-            e.preventDefault();
-
-            var body = $("html, body"),
-                height = $(window).height() - 60;
-           
-            body.animate({scrollTop: height}, '500', 'swing');
-          });
-
-        }());
-      });
-    </script>
   </body>
 </html>
