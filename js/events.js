@@ -21,6 +21,6 @@ $(document).ready(function() {
 
 	// Conversion
 	$(document).one('conversion', function() {
-		$('#tracking').append('<iframe src="conversion_tracking.html" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"></iframe>');
+		$('#tracking').append('<iframe src="conversion_tracking'+(window.landing==1)?'_2':'')+'.html" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"></iframe>');
 	})
 });

@@ -77,6 +77,7 @@ var Landing = function() {
 	t.init();
 }
 
+var landing = 2;
 $(document).ready(function() {
 	window.a = new Landing();
 });

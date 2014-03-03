@@ -205,6 +205,7 @@ var HomeAnimation = function() {
 	t.init();
 }
 
+var landing = 1;
 $(document).ready(function() {
 	window.a = new HomeAnimation();
 });
