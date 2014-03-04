@@ -1,8 +1,10 @@
 var HomeAnimation = function() {
 	t = this,
 	t.rocketIsAnimating = false,
+	t.sceneTransition = false,
 	t.scene = 1,
 	t.wvalues = {},
+	t.inputFocus = false,
 
 	// Elements
 	t.frame = $('#frame'),
@@ -38,9 +40,17 @@ var HomeAnimation = function() {
 			return t.hashEvent();
 		})
 
-		// Scroll arrows click
-		t.titles.find('.arrow-scroll-button').click(function() {
-			window.location.hash == this.href ? t.hashEvent() : null;
+		// Scroll arrows click / push hash state
+		t.titles.find('.arrow-scroll-button').click(function(e) {
+			e.preventDefault();
+			var url = this.href.substring(this.href.indexOf('#'));
+			if (history.pushState) { 
+				history.pushState({}, "", url);
+	        } else {
+				window.location.hash = url;
+			}
+			window.location.hash == url ? t.hashEvent() : null;
+			// return false;
 		});
 
 		var landed_up = false;
@@ -87,36 +97,93 @@ var HomeAnimation = function() {
 			}
 
 			// Clouds
-			if (t.scene < 3) {
-				for (var i = 0; i < t.cloud_count; i++) {
-					var cloud = t.clouds.eq(i);
-					cloud.css('top',(scrol*cloud.attr('data-speed'))+'px');
-				}
+			for (var i = 0; i < t.cloud_count; i++) {
+				var cloud = t.clouds.eq(i);
+				cloud.css('top',(scrol*cloud.attr('data-speed'))+'px');
 			}
 
-			// Titles
-			// t.titlesFade(scrol);
-		}).on('scrollstop', function() {
-			console.log('end')
-		})
+		});
 
 		// Form mail
 		$('#notify-mail').on('submit', function() {
 			t.submitForm(this, t.notifyFormResponse);
 			return false;
 		});
+
+		// Input focus
+		$('input').focus(function() {
+			t.inputFocus = true;
+		}).blur(function() {
+			t.inputFocus = false;
+		})
+
+		// Keyboard scroll
+		$(document).on('keydown', function(e) {
+			if (t.inputFocus) return;
+			var key = e.keyCode;
+			switch(key) {
+				// Down
+				case 40:
+				case 32:
+					e.preventDefault();
+					t.gotoNextScene();
+					break;
+				// Up
+				case 38:
+					e.preventDefault();
+					t.gotoPrevScene();
+					break;
+			}
+		});
 	}
 
+	// Hash event
 	t.hashEvent = function() {
 		var element = $(window.location.hash);
-		if (element.length) {
-			console.log($('body').scrollTop()+' - '+Math.abs(element.offset().top-t.wvalues.titlesTopLimit));
-			$('body').stop(true).animate({
-				scrollTop: '+='+(Math.abs(element.offset().top)+t.wvalues.titlesTopLimit)+'px'
-			}, 1000);
+		if (element.length > 0) {
+			t.scrollToElement(element);
 			return false;
 		}
 		return false;
+	}
+
+	// Next scene
+	t.gotoNextScene = function() {
+		if (!t.sceneTransition && t.scene < t.scenes_count) {
+			t.scrollToElement(t.scenes.eq(t.scenes_count-(t.scene+1)));
+		}
+	}
+
+	// Previous scene
+	t.gotoPrevScene = function() {
+		if (!t.sceneTransition && t.scene > 1) {
+			t.scrollToElement(t.scenes.eq(t.scenes_count-(t.scene-1)));
+		}
+	}
+
+	// Scroll to element
+	t.scrollToElement = function(element) {
+		var index = t.scenes.index(element);
+		// Set scene
+		t.scene = t.scenes_count-index;
+
+		var finalscroll = 0;
+		for (var i = t.scenes_count-1; i>index; i--) {
+			finalscroll += Math.abs(t.scenes.eq(i).offset().top-t.scenes.eq(i-1).offset().top);
+		}
+		if (index==0) {
+			finalscroll = $(document).outerHeight()-$(window).height();
+		}
+		t.sceneTransition = true;
+		$('body').stop(true).animate({
+			scrollTop: finalscroll
+		}, 1000, function() {
+			t.sceneTransition = false;
+			// Focus mail on end
+			if (t.scene == 5) {
+				$('input[name="email"]').focus();
+			}
+		});
 	}
 
 	t.updateWindowValues = function() {
