@@ -70,7 +70,16 @@ var Landing = function() {
 			$(document).trigger('conversion');
 		} else {
 			form.find('.form-group').eq(0).addClass('has-error');
-			form.find('.error-display').html(response.errormsg).show()
+			var msg = '';
+			switch (response.errormsg) {
+				case 'invalidemail':
+					msg = 'La dirección de email no es válida';
+					break;
+				default:
+					msg = 'Ha ocurrido un error. Por favor intenta nuevamente.'
+					break;
+			}
+			form.find('.error-display').html(msg).show()
 		}
 	}
 
