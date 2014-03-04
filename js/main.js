@@ -207,7 +207,7 @@ var HomeAnimation = function() {
 					msg = 'Ha ocurrido un error. Por favor intenta nuevamente.'
 					break;
 			}
-			form.find('.error-display .alert').html(msg).show()
+			form.find('.error-display').show().children().html(msg)
 		}
 	}
 
