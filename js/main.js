@@ -17,7 +17,8 @@ var HomeAnimation = function() {
 	t.clouds = $('#clouds').children('span'),
 	t.cloud_count = t.clouds.length,
 	t.endplanet = $('#end-planet'),
-	t.planets = $('#planets'),
+	t.planets = $('#planets').children('span'),
+	t.planets_count = t.planets.length,
 
 	t.init = function() {
 
@@ -33,10 +34,14 @@ var HomeAnimation = function() {
 			},0);
 		})
 
+		// Load hash on load
+		if (window.location.hash) {
+			t.hashEvent();
+		}
+
 		// Scroll #hash or arrows (go to scene)
 		$(window).on('hashchange', function(e) {
 			e.preventDefault();
-
 			return t.hashEvent();
 		})
 
@@ -64,7 +69,6 @@ var HomeAnimation = function() {
 				landed_up = false;
 				t.land.css('top','0px');
 				t.sky.css('bottom','0px');
-				t.planets.css('bottom','0px');
 				t.titles.css('bottom',-t.wvalues.titlesInitialBottom+'px');
 				t.rocket.addClass('landed').css('bottom', '0px');
 				return false;
@@ -86,6 +90,7 @@ var HomeAnimation = function() {
 			// Global elements (present in all scenes)
 			t.sky.css('bottom',-scrol+'px');
 			t.titles.css('bottom',(-scrol-t.wvalues.titlesInitialBottom)+'px');
+			// t.planets.css('bottom',-scrol+'px');
 
 			// Land hide
 			t.land.css('top',scrol+'px');
@@ -97,9 +102,19 @@ var HomeAnimation = function() {
 			}
 
 			// Clouds
-			for (var i = 0; i < t.cloud_count; i++) {
-				var cloud = t.clouds.eq(i);
-				cloud.css('top',(scrol*cloud.attr('data-speed'))+'px');
+			if (scrol+t.wvalues.winH < 3500) {
+				for (var i = 0; i < t.cloud_count; i++) {
+					var cloud = t.clouds.eq(i);
+					cloud.css('top',(scrol*cloud.attr('data-speed'))+'px');
+				}
+			}
+
+			// Planets
+			if (scrol+t.wvalues.winH > 3500) {
+				for (var i = 0; i < t.planets_count; i++) {
+					var planet = t.planets.eq(i);
+					planet.css('top',(scrol*planet.attr('data-speed'))+'px');
+				}
 			}
 
 		});
