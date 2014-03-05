@@ -75,6 +75,9 @@ var Landing = function() {
 				case 'invalidemail':
 					msg = 'La dirección de email no es válida';
 					break;
+				case 'alreadyexists':
+					msg = 'Ya estás inscrito con esta dirección de email';
+					break;
 				default:
 					msg = 'Ha ocurrido un error. Por favor intenta nuevamente.'
 					break;
