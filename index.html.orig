@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<title>Universo Acamica</title>
+
+	<meta name="description" content="Recorre la galaxia Web y conquista los planetas que te brindarán las herramientas que necesitas para cambiar tu futuro."/>
+	<meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+	
+	<link rel="shortcut icon" href="favicon.ico">
+	
+	<!-- External fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600|Lato:300,400,700' rel='stylesheet' type='text/css'>
+	<!-- Library styles -->
+	<link href="css/vendor/bootstrap.css" rel="stylesheet" type="text/css">
+	<link href="css/vendor/flat-ui.css" rel="stylesheet" type="text/css">
+
+	<link href="css/universe/main.css" rel="stylesheet" type="text/css">
+
+	<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Start Visual Website Optimizer Asynchronous Code -->
+	<script type='text/javascript'>
+	var _vwo_code=(function(){
+	var account_id=66077,
+	settings_tolerance=2000,
+	library_tolerance=2500,
+	use_existing_jquery=false,
+	// DO NOT EDIT BELOW THIS LINE
+	f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+	</script>
+	<!-- End Visual Website Optimizer Asynchronous Code -->
+
+	<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
+typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
+b._i.push([a,e,d])};b.__SV=1.2}})(document,window.mixpanel||[]);
+mixpanel.init("9ef0bafd4dd8465c0e9c770b6c145035");</script><!-- end Mixpanel -->
+
+</head>
+<body>
+
+	<header>
+		<h1 class="logo">Acamica</h1>
+		<nav class="menu">
+			<!-- <li><a href="#">Cursos</a></li> -->
+			<li id="login-button"><a href="/login">Ingresar</a></li>
+		</nav>
+	</header>
+
+	<div id="frame">
+
+		<div id="titles">
+			<div class="wrap">
+				
+				<div class="scene" id="queesperas">
+					<h1>¿Qué esperas?</h1>
+					<p>Accede a una carrera totalmente en línea e interactiva, donde en un lapso de <strong>sólo 4 meses</strong> puedes convertirte en un desarrollador web moderno con grandes oportunidades laborales.</p>
+					<p class="small">Déjanos tu email y te notificaremos cuando puedas inscribirte:</p>
+					<form id="notify-mail" action="http://www.acamica.com/ajax/notify_email">
+					<div class="row leave-mail">
+						<div class="col-xs-9 nopad-left">
+							<div class="form-group">
+								<input type="email" placeholder="Tu dirección de email" class="form-control input-lg input-home" name="email">
+<<<<<<< HEAD
+								<span class="input-icon fui-check-inverted" style="display:none"></span>
+=======
+								<span style="display:none" class="input-icon fui-check-inverted"></span>
+>>>>>>> 565207ab523d0c0a64f4bb4b7ee847d1aa781a54
+							</div>
+						</div>
+						<div class="col-xs-3 nopad">
+							<div class="form-group">
+								<input type="submit" class="btn btn-block btn-lg btn-danger" value="Notificarme">
+							</div>
+						</div>
+					</div>
+					<div class="row leave-mail error-display">
+						<div class="alert alert-danger">Ha ocurrido un error</div>
+					</div>
+					</form>
+				</div>
+
+				<div class="scene" id="sientatufuturo">
+					<h1>Sienta las bases de tu futuro</h1>
+					<p>Nunca antes la demanda de desarrolladores web fue <strong>tan alta como hoy</strong>. ¡Ten la oportunidad de empezar a trabajar en las empresas más innovadoras de internet o anímate a emprender por tu cuenta!</p>
+					<a href="#queesperas" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				</div>
+
+				<div class="scene" id="creatuproyecto">
+					<h1>Crea tu propio proyecto</h1>
+					<p>Aprenderás paso a paso como crear un proyecto web completo, y obtendrás todos los conocimientos necesarios para poder <strong>crear el tuyo</strong>.</p>
+					<a href="#sientatufuturo" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				</div>
+
+				<div class="scene" id="nosoloastronautas">
+					<h1>Una carrera no sólo<br> para astronautas</h1>
+					<p>Pensamos cada paso con videos y ejercicios interactivos que recorren todas las tecnologías necesarias para convertirte en un desarrollador web moderno, <strong>¡desde cero!</strong></p>
+					<a href="#creatuproyecto" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				</div>
+
+				<div class="scene" id="conviertete">
+					<h1>Conviértete en<br> desarrollador web</h1>
+					<p class="big">Despega tu potencial de crecimiento aprendiendo a crear para la web<br> de manera <strong>rápida, dinámica y accesible</strong>.</p>
+					<a href="#nosoloastronautas" class="arrow-scroll-button"><i class="arrow-up"></i></a>
+				</div>
+
+			</div>
+		</div>	
+
+		<div id="sky">
+			<div id="star-sky"></div>
+			<div id="end-planet"></div>
+		</div>
+
+		<div id="land"></div>
+
+		<div id="rocket" class="landed"></div>
+
+		<div id="clouds">
+			<span class="cloud2" data-speed="0.5"></span>
+			<span class="cloud3" data-speed="0.6"></span>
+			<span class="cloud2" data-speed="0.4"></span>
+			<span class="cloud1" data-speed="1.1"></span>
+			<span class="cloud1" data-speed="0.8"></span>
+			<span class="cloud1" data-speed="0.6"></span>
+			<span class="cloud3" data-speed="0.7"></span>
+		</div>
+
+		<div id="badges">
+			<span data-speed="0.8"></span>
+			<span data-speed="0.67"></span>
+			<span data-speed="0.7"></span>
+			<span data-speed="0.75"></span>
+			<span data-speed="0.67"></span>
+			<span data-speed="0.9"></span>
+		</div>
+
+		<div id="planets">
+			<span class="moon" data-speed="0.67"></span>
+			<span class="planet1" data-speed="0.8"></span>
+			<span class="planet2" data-speed="1"></span>
+			<span class="planet3" data-speed="0.5"></span>
+		</div>
+
+		<div id="projects">
+			<span data-speed="0.6"></span>
+			<span data-speed="0.89"></span>
+			<span data-speed="1.48"></span>
+		</div>
+
+	</div>
+
+	<div id="tracking"></div>
+
+	<script type="text/javascript" src="js/vendor/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/events.js"></script>
+
+</body>
+</html>
