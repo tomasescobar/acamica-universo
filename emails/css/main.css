@@ -1,0 +1,144 @@
+#content {
+	width: 790px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+
+/*====================================
+	HEADER
+=====================================*/
+header {
+	background-color: #1fbba6;
+	border-bottom: 1px solid rgba(0,0,0,0.1);
+	padding: 15px;
+	height: 60px;
+	width: 100%;
+}
+.wrap {
+	width: 790px;
+	margin: 0 auto;
+}
+.lead {
+	color: #FFF;
+	margin-left: 10px;
+	font-size: 1.2em;
+	vertical-align: top;
+	padding-left: 15px;
+	border-left: 1px solid rgba(0,0,0,0.1);;
+}
+ul.responsive {
+	float: right;
+	margin: 0px auto;
+}
+ul.responsive>li {
+	display: block;
+	padding: 0 5px;
+	float: left;
+	margin-left: 5px;
+	cursor: pointer;
+	text-align: center;
+	line-height: 1;
+	opacity: 1;
+}
+ul.responsive>li:hover {
+	opacity: 0.7;
+}
+
+.color-box {
+	width: 185px;
+	margin: 0px 10px;
+	float: right;
+	padding: 2px;
+	background-color: #16a085;
+	border-radius: 3px;
+}
+
+
+/*====================================
+	MENU
+=====================================*/
+.menu-box {
+	width: 790px;
+	padding: 10px 0;
+	margin: 0 auto;
+}
+.menu-box>ul {
+	overflow: hidden;
+	margin: 0; padding: 0;
+}
+.menu-box .with-shadow {
+	width: 80px;
+}
+.menu-box>ul>li {
+	display: block;
+	float: left;
+	margin-right: 5px;
+	cursor: pointer;
+	position: relative;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	float: left;
+}
+.menu-box>ul>li>a {
+	color: #fff;
+	display: block;
+	background: #bdc3c7;
+	border-radius: 2px;
+	padding: 2px 10px;
+}
+.menu-box a:hover,
+.menu-box .selected {
+	background: #333;
+}
+.menu-box>ul>li>ul.submenu {
+	display: none;
+	position: absolute;
+	top: 95px;
+	left: 0px;
+}
+.menu-box>ul>li:hover>ul.submenu {
+	display: block;
+}
+.menu-box>ul>li>ul.submenu>li {
+	display: block;
+	width: 85px;
+	line-height: 1.2;
+	padding: 5px;
+	background: #333;
+	color: #FFF;
+}
+.menu-box>ul>li>ul.submenu>li:hover {
+	color: #FC0;
+	background: #222;
+}
+.menu-box>ul>li>img {
+	width: 100%;
+	height: auto;
+}
+
+
+/*====================================
+	IFRAME
+=====================================*/
+.iframebox, .iframebox>iframe {
+	margin: auto;
+}
+.iframebox>iframe {
+	width: 100%;
+	border: 0px solid #bdc3c7;
+}
+#fullframe {
+	width: 790px;
+}
+#mediumframe {
+	width: 580px;
+}
+#smallframe {
+	width: 400px;
+}
+.iframebox {
+	-webkit-transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+	transition: all 600ms cubic-bezier(0.19, 1, 0.22, 1);
+}
