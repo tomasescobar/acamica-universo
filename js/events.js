@@ -1,13 +1,11 @@
 // Setear eventos a medir
 $(document).ready(function() {
 	$('#notify-mail').one('submit', function() {
-		console.log('Submit mail')
 		mixpanel.track("Submit mail", {
 			landing: window.landing
 		});
 	})
 	$('#login-button').one('click', function() {
-		console.log('Click login button')
 		mixpanel.track("Click login button", {
 			landing: window.landing
 		});
@@ -18,15 +16,12 @@ $(document).ready(function() {
 		var height = $(this).outerHeight()-$(window).outerHeight();
 		if ($(this).scrollTop() >= height) {
 			// Full scroll
-			console.log('Full scroll event')
-
 			mixpanel.track("Full scroll", {
 				landing: window.landing
 			});
 			$(this).off('scroll.fullevent');
 		} else if (!midscroll && $(this).scrollTop() >= height/2) {
 			// Mid scroll
-			console.log('Mid scroll event')
 			mixpanel.track("Mid scroll", {
 				landing: window.landing
 			});
@@ -37,7 +32,6 @@ $(document).ready(function() {
 	// Conversion
 	$(document).one('conversion', function() {
 		$('#tracking').append('<iframe src="conversion_tracking'+(window.landing==2?'_2':'')+'.html" frameborder="0" scrolling="no" width="1" height="1" style="visibility:hidden;display:none"></iframe>');
-
 		mixpanel.track("Conversion", {
 			landing: window.landing
 		});
