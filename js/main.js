@@ -248,18 +248,6 @@ var HomeAnimation = function() {
 		return vars;
 	}
 
-	// Fade titles as we go up
-	t.titlesFade = function(scrol) {
-		console.log('Offset top: '+t.scenes.last().offset().top+' - Scrolltop: '+scrol+' - Toplimit:'+t.wvalues.titlesTopLimit)
-		for (var i = t.scenes_count-1; i >= 0; i--) {
-			var element = t.scenes.eq(i), eof = element.offset().top;
-			if (eof+scrol > t.wvalues.winH) {
-				// element.addClass('hidden');
-				console.log(i);
-			}
-		}
-	}
-
 	// Submit form
 	t.submitForm = function(f,callback) {
     	f = $(f);
