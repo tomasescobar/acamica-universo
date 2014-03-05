@@ -19,6 +19,10 @@ var HomeAnimation = function() {
 	t.endplanet = $('#end-planet'),
 	t.planets = $('#planets').children('span'),
 	t.planets_count = t.planets.length,
+	t.projects = $('#projects').children('span'),
+	t.projects_count = t.projects.length,
+	t.badges = $('#badges').children('span'),
+	t.badges_count = t.badges.length,
 
 	t.init = function() {
 
@@ -55,16 +59,15 @@ var HomeAnimation = function() {
 				window.location.hash = url;
 			}
 			window.location.hash == url ? t.hashEvent() : null;
-			// return false;
 		});
 
 		var landed_up = false;
 
 		// Titles scroll event
 		$(document).on('scroll', function(e) {
-			var scrol = $(this).scrollTop(), height = $(this).outerHeight();
+			var scrol = $(this).scrollTop(), height = $(this).outerHeight(), abscrol = scrol+t.wvalues.winH;
 
-			var sw = scrol+t.wvalues.winH, docH = $(this).outerHeight()-30;
+			var sw = abscrol, docH = $(this).outerHeight()-30;
 			if (scrol <= 0) {
 				landed_up = false;
 				t.land.css('top','0px');
@@ -90,7 +93,6 @@ var HomeAnimation = function() {
 			// Global elements (present in all scenes)
 			t.sky.css('bottom',-scrol+'px');
 			t.titles.css('bottom',(-scrol-t.wvalues.titlesInitialBottom)+'px');
-			// t.planets.css('bottom',-scrol+'px');
 
 			// Land hide
 			t.land.css('top',scrol+'px');
@@ -102,7 +104,7 @@ var HomeAnimation = function() {
 			}
 
 			// Clouds
-			if (scrol+t.wvalues.winH < 3500) {
+			if (abscrol < 3500) {
 				for (var i = 0; i < t.cloud_count; i++) {
 					var cloud = t.clouds.eq(i);
 					cloud.css('top',(scrol*cloud.attr('data-speed'))+'px');
@@ -110,10 +112,26 @@ var HomeAnimation = function() {
 			}
 
 			// Planets
-			if (scrol+t.wvalues.winH > 3500) {
+			if (abscrol > 3500) {
 				for (var i = 0; i < t.planets_count; i++) {
 					var planet = t.planets.eq(i);
 					planet.css('top',(scrol*planet.attr('data-speed'))+'px');
+				}
+			}
+
+			// Projects
+			if (abscrol > 1600 && abscrol < 5000) {
+				for (var i = 0; i < t.projects_count; i++) {
+					var project = t.projects.eq(i);
+					project.css('top',(scrol*project.attr('data-speed'))+'px');
+				}
+			}
+
+			// Badges
+			if (abscrol > 100 && abscrol < 4000) {
+				for (var i = 0; i < t.badges_count; i++) {
+					var badge = t.badges.eq(i);
+					badge.css('top',(scrol*badge.attr('data-speed'))+'px');
 				}
 			}
 
@@ -276,7 +294,7 @@ var HomeAnimation = function() {
     t.notifyFormResponse = function(form, response) {
     	var form = $(form);
 		if (!response.error) {
-			form.find('.form-group').eq(0).removeClass('error').addClass('has-success');
+			form.find('.form-group').eq(0).removeClass('error').addClass('has-success').find('.fui-check-inverted').show();
 			$(document).trigger('conversion');
 		} else {
 			form.find('.form-group').eq(0).addClass('has-error');

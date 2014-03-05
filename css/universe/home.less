@@ -58,7 +58,7 @@
 #rocket {
 	left: 50%;
 	margin-left: -50px;
-	margin-bottom: -30px;
+	margin-bottom: -75px;
 	position: absolute;
 	z-index: 10000;
 	bottom: 0;
@@ -77,6 +77,7 @@
 	animation: rocket-fire 0.25s steps(4) infinite;
 	transition: transform 1s;
 	&.landed {
+		margin-bottom: -30px;
 		display: block;
 		background: url(../../img/home/rocket-landed.svg);
 		background-size: 100px auto;
@@ -87,6 +88,7 @@
 		animation: none;
 	}
 	&.land-up {
+		margin-bottom: -30px;
 		-webkit-animation: none;
 		-moz-animation: none;
 		animation: none;
@@ -104,6 +106,7 @@
 		transform: rotate(180deg);
 	}
 	&.land-up-stand {
+		margin-bottom: -30px;
 		-webkit-animation: none;
 		-moz-animation: none;
 		animation: none;
@@ -340,6 +343,123 @@
 		height: 14%;
 		left: 10%;
 		margin-top: -280px;
+	}
+}
+
+/* ====================================================
+	PROJECTS
+==================================================== */
+#projects {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	bottom: 2000px;
+
+	span {
+		position: absolute;
+		display: block;
+	}
+	span:first-child {
+		width: 100%;
+		height: 20%;
+		left: 14%;
+		margin-top: 800px;
+		background: url(../../img/landing/project-console.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+	}
+	span:nth-child(2) {
+		width: 100%;
+		height: 15%;
+		left: 72%;
+		margin-top: -280px;
+		background: url(../../img/landing/project-final.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+	}
+	span:nth-child(3) {
+		width: 100%;
+		height: 20%;
+		left: 60%;
+		margin-top: -1400px;
+		background: url(../../img/landing/project-web.svg);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: 0;
+	}
+}
+
+/* ====================================================
+	BADGES
+==================================================== */
+#badges {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+ 	bottom: 500px;
+
+	span {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 100px;
+	}
+	span:first-child {
+		left: 12%;
+		margin-top: -450px;
+		background: url(../../img/home/course-badges.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0 -300px;
+	}
+	span:nth-child(2) {
+		left: 75%;
+		width: 140px;
+		height: 140px;
+		margin-top: -280px;
+		background: url(../../img/home/course-badges.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0 -140px;
+	}
+	span:nth-child(3) {
+		left: 82%;
+		margin-top: -100px;
+		background: url(../../img/home/course-badges.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0 -200px;
+	}
+	span:nth-child(4) {
+		left: 30%;
+		width: 140px;
+		height: 140px;
+		background: url(../../img/home/course-badges.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0 0;
+	}
+	span:nth-child(5) {
+		left: 17%;
+		width: 80px;
+		height: 80px;
+		margin-top: 50px;
+		background: url(../../img/home/course-badges.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0 -320px;
+	}
+	span:nth-child(6) {
+		left: 60%;
+		width: 120px;
+		height: 120px;
+		margin-top: -240px;
+		background: url(../../img/home/course-badges.svg);
+		background-size: 100% auto;
+		background-repeat: no-repeat;
+		background-position: 0 -600px;
 	}
 }
 
