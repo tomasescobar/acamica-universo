@@ -10,6 +10,11 @@ $(document).ready(function() {
 			landing: window.landing
 		});
 	})
+	$('#contact-button').one('click', function() {
+		mixpanel.track("Click contact button", {
+			landing: window.landing
+		});
+	})
 	
 	var midscroll = false;
 	$(document).on('scroll.fullevent', function() {
