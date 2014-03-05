@@ -66,7 +66,7 @@ var Landing = function() {
     t.notifyFormResponse = function(form, response) {
     	var form = $(form);
 		if (!response.error) {
-			form.find('.form-group').eq(0).removeClass('error').addClass('has-success');
+			form.find('.form-group').eq(0).removeClass('error').addClass('has-success').find('.fui-check-inverted').show();
 			$(document).trigger('conversion');
 		} else {
 			form.find('.form-group').eq(0).addClass('has-error');
