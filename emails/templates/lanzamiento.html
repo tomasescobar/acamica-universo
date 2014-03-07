@@ -7,414 +7,364 @@
 
    <style type="text/css">
       html { width: 100%; }
-      body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; }
       body { margin: 0; padding: 0; }
-      table { border-spacing: 0; }
-      img { display: block !important; }
-      table td { border-collapse: collapse; }
       a { color: #3498DB; text-decoration: none; }
-      .hide { max-height: 0px; font-size: 0; display: none; }
+      table { border-spacing: 0; }
+      table td { border-collapse: collapse; padding: 0; border:none; }
+      td[class="white"] { background: #FFF; }
+      img[class="top_fold"] { max-width: 0px !important; max-height: 0px !important;}
+      table[class="table600"] { width: 95%; max-width: 600px; margin: auto; }
+      table[class="table550"] { width: 90% !important; max-width: 550px; }
+      table[class="table2-2"] { width: 48% !important; }
+      img[class="img1"] { width: 100% !important; height: auto !important; } 
+      table[class="table1-3"] { width: 100% !important; }
+      table[class="table3-1"] { width: 100% !important; }
+      table[class="space"] { display: none !important; }
       /* Responsive */
-      @media only screen and (max-width: 640px) {
-         body { width: auto !important; }
-         table[class="table600"] { width: 450px !important; text-align: center !important; }
-         table[class="table550"] { width: 87% !important; float: none !important; }
-         table[class="table2-2"] { width: 47% !important; }
-         img[class="img1"] { width: 100% !important; height: auto !important; } 
-         table[class="social"] { width: 100px !important; }
-         table[class="table3-1"] { width: 64% !important; }
-         td[class="clear_pad"] { padding: 0px !important; }
-         /*space*/
-         table[class="space"] { display: none !important; }
-      }
       @media only screen and (max-width: 479px) {
-         body { width: auto !important; }
-         img[class="top_fold"] { max-width: 0px !important; max-height: 0px !important;}
-         table[class="table600"] { width: 290px !important; }
-         table[class="table550"] { float: none !important; }
-         table[class="table2-2"] { width: 100% !important; text-align: center !important; }
-         img[class="img1"] { width: 100% !important; } 
-         table[class="table1-3"] { width: 100% !important; }
-         table[class="table3-1"] { width: 100% !important; }
-         .hide { max-height: 26px !important; font-size: 0px !important; display: block !important; }
-         /*space*/
-         table[class="space"] { display: none !important; }
+         td[class="logo"] { text-align: center !important; }
       }
    </style>
 </head>
 <body>
-   <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ECF0F1">
-      <tbody><tr>
-         <td valign="top">
-            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-
+   <table width="100%"><tbody>
+      <tr>
+         <td style="background-color:#ECF0F1;">
+            <table width="100%" cellpadding="0" cellspacing="0"><tbody>
                <!--Header-->
+               <tr>
+                  <td height="20"></td>
+               </tr>
+               <tr>
+                  <td>
+                     <table class="table600" width="600" cellpadding="0" cellspacing="0"><tbody>
+                        <tr>
+                           <td class="white">
 
-               <tbody><tr>
-                  <td valign="top">
-                     <table width="100%" height="5" border="0" align="center" cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                           <td valign="top">
-                              <table class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+                              <!--Logo-->
 
+                              <table class="table1-3" width="183" bgcolor="#ffffff" border="0" align="left" cellpadding="0" cellspacing="0">
                                  <tbody>
-
                                  <tr>
-                                    <td height="20"></td>
+                                    <td height="35"></td>
                                  </tr>
                                  <tr>
-                                    <td align="left" valign="top">
-                                       <table width="600" border="0" align="left" cellpadding="0" cellspacing="0" bgcolor="#ffffff" class="table600">
-                                          <tbody><tr>
-                                             <td style="padding-left:0px; padding-right:0px;">
-
-                                                <!--Logo-->
-
-                                                <table class="table1-3" width="183" bgcolor="#ffffff" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                   <tbody>
-                                                   <tr>
-                                                      <td height="35" align="right" valign="top"></td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td align="center">
-                                                         <img src="http://sc.acamica.com/img/logo_dark.png" width="116" height="17" alt="logo">
-                                                      </td>
-                                                   </tr>
-                                                   <tr>
-                                                      <td height="35" align="right" valign="top"></td>
-                                                   </tr>
-                                                </tbody></table>
-
-                                                <!--End Logo-->
-
-                                             </td>
-                                          </tr>
-                                       </tbody></table>
+                                    <td class="logo" align="left" style="padding: 0 30px;">
+                                       <img src="http://sc.acamica.com/img/logo_dark.png" width="116" height="17" alt="logo">
                                     </td>
                                  </tr>
+                                 <tr>
+                                    <td height="35"></td>
+                                 </tr>
                               </tbody></table>
+
+                              <!--End Logo-->
+
                            </td>
                         </tr>
                      </tbody></table>
                   </td>
                </tr>
+            </tbody>
+               </table>
                <!--End Header-->
 
-
-
                <!-- Here start the {{ content }} -->
-
-               <!--Header Image-->
-               <tr>
-                  <td valign="top">
-                     <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <tbody><tr>
-                           <td>
-                              <table class="table600" bgcolor="#34495e" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                                 <tbody><tr>
-                                    <td align="center">
-
-                                       <!--Edit-->
-                                       <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/header.png" width="600" height="265" alt="header_img">
-                                       <!--end Edit-->
-
-                                    </td>
-                                 </tr>
-                              </tbody></table>
-                           </td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-               </tr>
-               <!--End Header Image-->
-
-               <!--1:1 Content-->
-               <tr>
-                  <td valign="top">
-                     <table bgcolor="#FFFFFF" class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                           <td height="30"></td>
-                        </tr>
-                        <tr>
-                           <td valign="top">
-                              <table class="table550" width="550" border="0" align="center" cellpadding="0" cellspacing="0">
-
-                                 <!--Article Title-->
-
-                                 <tbody><tr>
-                                    <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495E;">
-
-                                       <!--Edit-->
-                                       Una carrera no sólo para astronautas
-                                       <!--end Edit-->
-
-                                    </td>
-                                 </tr>
-
-                                 <!--End Article Title-->
-
-                                 <tr>
-                                    <td height="10" align="left" valign="top"></td>
-                                 </tr>
-
-                                 <!--Content-->
-
-                                 <tr>
-                                    <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
-                                       
-                                       <!--Edit-->
-                                       Pensamos cada paso con videos y ejercicios interactivos que recorren todas las tecnologías necesarias para convertirte en un desarrollador web moderno, ¡desde cero!
-                                       <a href="#">conocer más...</a>
-                                       <!--end Edit-->
-
-                                    </td>
-                                 </tr>
-
-                                 <!--End Content--> </tbody></table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td height="30" style="border-bottom:1px dotted #EEE;"></td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-               </tr>
-               <!--End 1:1 Content-->
                
-               <!--1:2 Panel [Right Text]-->
-               <tr>
-                  <td valign="top">
-                     <table bgcolor="#FFFFFF" class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                           <td height="30"></td>
-                        </tr>
+               <table width="100%">
+                  <!--Header Image-->
+                  <tr>
+                     <td>
+                        <table class="table600" width="600" cellpadding="0" cellspacing="0"><tbody>
                         <tr>
-                           <td>
-                              <table class="table550" width="550" border="0" align="center" cellpadding="0" cellspacing="0">
-                                 <tbody><tr>
-                                    <td valign="top">
-                                       <table class="table2-2" width="237" border="0" align="left" cellpadding="0" cellspacing="0">
-                                          <tbody><tr>
-                                             <td>
-                                                
-                                                <!--Edit-->
-                                                <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/console.png" width="237" height="150" alt="237">
-                                                <!--end Edit-->
+                           <td class="white">
 
-                                             </td>
-                                          </tr>
-                                          <tr></tr>
-                                          <tr>
-                                             <td align="left" valign="top" height="20"></td>
-                                             <td></td>
-                                          </tr>
-                                       </tbody></table>
-                                       <table width="263" border="0" align="right" cellpadding="0" cellspacing="0" class="table2-2">
-                                          <tbody><tr></tr>
-                                          <!--Article Title-->
-                                          <tr>
-                                             <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495e;">
-                                                
-                                                <!--Edit-->
-                                                Crea código
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <!--End Article Title-->
-                                          <tr>
-                                             <td height="10" align="left" valign="top"></td>
-                                          </tr>
-                                          <!--Content-->
-                                          <tr>
-                                             <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
-
-                                                <!--Edit-->
-                                                Crearás el código de tu proyecto usando las herramientas más avanzadas en la actualidad.
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <!--End Content--> </tbody></table>
-                                    </td>
-                                 </tr>
-                              </tbody></table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td height="30" style="border-bottom:1px dotted #EEE;"></td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-               </tr>
-               <!--End 1:2 Panel [Right Text]-->
-
-               <!--1:2 Panel [Left Text]-->
-               <tr>
-                  <td valign="top">
-                     <table bgcolor="#ffffff" class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                           <td height="30"></td>
-                        </tr>
-                        <tr>
-                           <td bgcolor="#FFFFFF">
-                              <table class="table550" width="550" border="0" align="center" cellpadding="0" cellspacing="0">
-                                 <tbody><tr>
-                                    <td valign="top">
-                                       <table class="table2-2" width="237" border="0" align="right" cellpadding="0" cellspacing="0">
-                                          <tbody><tr>
-                                             <td>
-                                                
-                                                <!--Edit-->
-                                                <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/app.png" width="237" height="150" alt="237">
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <tr></tr>
-                                          <tr>
-                                             <td align="left" valign="top" height="20"></td>
-                                             <td></td>
-                                          </tr>
-                                       </tbody></table>
-
-                                       <table width="263" border="0" align="left" cellpadding="0" cellspacing="0" class="table2-2">
-                                          <tbody><tr></tr>
-                                          <!--Article Title-->
-                                          <tr>
-                                             <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495e;">
-                                                
-                                                <!--Edit-->
-                                                Aplicaciones
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <!--End Article Title-->
-                                          <tr>
-                                             <td height="10" align="left" valign="top"></td>
-                                          </tr>
-                                          <!--Content-->
-                                          <tr>
-                                             <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
-
-                                                <!--Edit-->
-                                                Utilizando las tecnologías más avanzadas que hoy están revolucionando la web.
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <!--End Content--> </tbody></table>
-                                    </td>
-                                 </tr>
-                              </tbody></table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td height="30" style="border-bottom:1px dotted #EEE;"></td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-               </tr>
-               <!--End 1:2 Panel [Left Text]-->
-
-               <!--1:2 Panel [Right Text]-->
-
-               <tr>
-                  <td valign="top">
-                     <table bgcolor="#FFFFFF" class="table600" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                           <td height="30"></td>
-                        </tr>
-                        <tr>
-                           <td>
-                              <table class="table550" width="550" border="0" align="center" cellpadding="0" cellspacing="0">
-                                 <tbody><tr>
-                                    <td valign="top">
-
-                                       <table class="table2-2" width="237" border="0" align="left" cellpadding="0" cellspacing="0">
-                                          <tbody><tr>
-                                             <td>
-                                                
-                                                <!--Edit-->
-                                                <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/final.png" width="237" height="150" alt="237">
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <tr></tr>
-                                          <tr>
-                                             <td align="left" valign="top" height="20"></td>
-                                             <td></td>
-                                          </tr>
-                                       </tbody></table>
-
-                                       <!--End 237 image-->
-
-                                       <table width="263" border="0" align="right" cellpadding="0" cellspacing="0" class="table2-2">
-                                          <tbody><tr></tr>
-                                          <!--Article Title-->
-                                          <tr>
-                                             <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495e;">
-                                             
-                                             <!--Edit-->
-                                             Despegá
-                                             <!--end Edit-->
-                                             
-                                             </td>
-                                          </tr>
-                                          <!--End Article Title-->
-                                          <tr>
-                                             <td height="10" align="left" valign="top"></td>
-                                          </tr>
-                                          <!--Content-->
-                                          <tr>
-                                             <td align="left" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
-
-                                                <!--Edit-->
-                                                Podrás publicar tu proyecto en la comunidad y demostrar todos tus conocimientos.
-                                                <!--end Edit-->
-
-                                             </td>
-                                          </tr>
-                                          <!--End Content--> </tbody></table>
-                                    </td>
-                                 </tr>
-                              </tbody></table>
-                           </td>
-                        </tr>
-                        <tr>
-                           <td height="30" style="border-bottom:1px dotted #EEE;"></td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-               </tr>
-               <!--End 1:2 Panel [Right Text]-->
-
-               <!--Actions-->
-               <tr>
-                  <td valign="top">
-                     <table class="table600" bgcolor="#ffffff" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                        <tbody><tr>
-                           <td height="60"></td>
-                        </tr>
-                        <tr>
-                           <td align="center">
-                              
                               <!--Edit-->
-                              <a href="#" style="color: #fff;background-color: #e74c3c;padding: 12px 19px;font-size: 17px;border-radius: 6px;font-family:Helvetica, Arial, sans-serif;font-weight:normal;">Empezar ahora</a>
+                              <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/header.png" width="600" alt="header_img">
                               <!--end Edit-->
 
                            </td>
                         </tr>
-                        <tr>
-                           <td height="70"></td>
-                        </tr>
-                     </tbody></table>
-                  </td>
-               </tr>
-               <!--End Actions-->
+                        </tbody></table>
+                     </td>
+                  </tr>
+                  <!--End Header Image-->
 
+                  <!--1:1 Content-->
+                  <tr>
+                     <td>
+                        <table class="table600" width="600" cellpadding="0" cellspacing="0"><tbody>
+                           <tr>
+                              <td height="30" class="white"></td>
+                           </tr>
+                           <tr>
+                              <td class="white">
+                                 <table class="table550" width="550" align="center" cellpadding="0" cellspacing="0"><tbody>
+                                    <!--Article Title-->
+                                    <tr>
+                                       <td style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495E;">
+
+                                          <!--Edit-->
+                                          Una carrera no sólo para astronautas
+                                          <!--end Edit-->
+
+                                       </td>
+                                    </tr>
+
+                                    <!--End Article Title-->
+
+                                    <tr>
+                                       <td height="10"></td>
+                                    </tr>
+
+                                    <!--Content-->
+
+                                    <tr>
+                                       <td style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
+                                          
+                                          <!--Edit-->
+                                          Pensamos cada paso con videos y ejercicios interactivos que recorren todas las tecnologías necesarias para convertirte en un desarrollador web moderno, ¡desde cero!
+                                          <a href="#">conocer más...</a>
+                                          <!--end Edit-->
+
+                                       </td>
+                                    </tr>
+
+                                    <!--End Content--> </tbody></table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td height="30" class="white" style="border-bottom:1px dotted #EEE;"></td>
+                           </tr>
+                        </tbody></table>
+                     </td>
+                  </tr>
+                  <!--End 1:1 Content-->
+               
+                  <!--1:2 Panel [Right Text]-->
+                  <tr>
+                     <td>
+                        <table class="table600" width="600" cellpadding="0" cellspacing="0"><tbody>
+                           <tr>
+                              <td class="white" height="30"></td>
+                           </tr>
+                           <tr>
+                              <td class="white">
+                                 <table class="table550" width="550" align="center" cellpadding="0" cellspacing="0"><tbody>
+                                    <tr>
+                                       <td>
+                                          
+                                          <table class="table2-2" align="left" style="float:left;" cellpadding="0" cellspacing="0"><tbody>
+                                             <tr>
+                                                <td>
+                                                   
+                                                   <!--Edit-->
+                                                   <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/console.png" width="237" height="150" alt="237">
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td height="20"></td>
+                                             </tr>
+                                          </tbody></table>
+
+                                          <table class="table2-2" align="right" style="float:right;" cellpadding="0" cellspacing="0"><tbody>
+                                             <!--Article Title-->
+                                             <tr>
+                                                <td style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495e;">
+                                                   
+                                                   <!--Edit-->
+                                                   Crea código
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <!--End Article Title-->
+                                             <tr>
+                                                <td height="10"></td>
+                                             </tr>
+                                             <!--Content-->
+                                             <tr>
+                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
+
+                                                   <!--Edit-->
+                                                   Crearás el código de tu proyecto usando las herramientas más avanzadas en la actualidad.
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <!--End Content--> </tbody></table>
+                                       </td>
+                                    </tr>
+                                 </tbody></table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="white" height="30" style="border-bottom:1px dotted #EEE;"></td>
+                           </tr>
+                        </tbody></table>
+                     </td>
+                  </tr>
+                  <!--End 1:2 Panel [Right Text]-->
+
+                  <!--1:2 Panel [Left Text]-->
+                  <tr>
+                     <td>
+                        <table class="table600" width="600" cellpadding="0" cellspacing="0"><tbody>
+                           <tr>
+                              <td class="white" height="30"></td>
+                           </tr>
+                           <tr>
+                              <td class="white">
+                                 <table class="table550" width="550" align="center" cellpadding="0" cellspacing="0"><tbody>
+                                    <tr>
+                                       <td>
+                                          <table class="table2-2" style="float: right;" cellpadding="0" cellspacing="0"><tbody>
+                                             <tr>
+                                                <td>
+                                                   
+                                                   <!--Edit-->
+                                                   <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/app.png" width="237" height="150" alt="237">
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td height="20"></td>
+                                             </tr>
+                                          </tbody></table>
+
+                                          <table class="table2-2" style="float: left;" cellpadding="0" cellspacing="0"><tbody>
+                                             <!--Article Title-->
+                                             <tr>
+                                                <td style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495e;">
+                                                   
+                                                   <!--Edit-->
+                                                   Aplicaciones
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <!--End Article Title-->
+                                             <tr>
+                                                <td height="10"></td>
+                                             </tr>
+                                             <!--Content-->
+                                             <tr>
+                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
+
+                                                   <!--Edit-->
+                                                   Utilizando las tecnologías más avanzadas que hoy están revolucionando la web.
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <!--End Content--> </tbody></table>
+                                       </td>
+                                    </tr>
+                                 </tbody></table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="white" height="30" style="border-bottom:1px dotted #EEE;"></td>
+                           </tr>
+                        </tbody></table>
+                     </td>
+                  </tr>
+                  <!--End 1:2 Panel [Left Text]-->
+
+                  <!--1:2 Panel [Right Text]-->
+                  <tr>
+                     <td>
+                        <table class="table600" width="600" cellpadding="0" cellspacing="0">
+                           <tbody><tr>
+                              <td class="white" height="30"></td>
+                           </tr>
+                           <tr>
+                              <td class="white">
+                                 <table class="table550" width="500" align="center" cellpadding="0" cellspacing="0"><tbody>
+                                    <tr>
+                                       <td>
+                                          <table class="table2-2" style="float: left;" cellpadding="0" cellspacing="0"><tbody>
+                                             <tr>
+                                                <td>
+                                                   
+                                                   <!--Edit-->
+                                                   <img class="img1" src="http://sc.acamica.com/img/email/newsletter/bootcamp/final.png" width="237" height="150" alt="237">
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <tr>
+                                                <td height="20"></td>
+                                             </tr>
+                                          </tbody></table>
+
+                                          <table class="table2-2" style="float: right;" cellpadding="0" cellspacing="0"><tbody>
+                                             <!--Article Title-->
+                                             <tr>
+                                                <td style="font-family: Helvetica, Arial, sans-serif; font-weight:bold; font-size:18px; color:#34495e;">
+                                                
+                                                <!--Edit-->
+                                                Despegá
+                                                <!--end Edit-->
+                                                
+                                                </td>
+                                             </tr>
+                                             <!--End Article Title-->
+                                             <tr>
+                                                <td height="10"></td>
+                                             </tr>
+                                             <!--Content-->
+                                             <tr>
+                                                <td style="font-family: Helvetica, Arial, sans-serif; font-size:14px; color:#999999; line-height:24px;">
+
+                                                   <!--Edit-->
+                                                   Podrás publicar tu proyecto en la comunidad y demostrar todos tus conocimientos.
+                                                   <!--end Edit-->
+
+                                                </td>
+                                             </tr>
+                                             <!--End Content--> </tbody></table>
+                                       </td>
+                                    </tr>
+                                 </tbody></table>
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="white" height="30" style="border-bottom:1px dotted #EEE;"></td>
+                           </tr>
+                        </tbody></table>
+                     </td>
+                  </tr>
+                  <!--End 1:2 Panel [Right Text]-->
+
+                  <!--Actions-->
+                  <tr>
+                     <td>
+                        <table class="table600" width="600" cellpadding="0" cellspacing="0"><tbody>
+                           <tr>
+                              <td class="white" height="60"></td>
+                           </tr>
+                           <tr>
+                              <td class="white" style="text-align: center;">
+                                 
+                                 <!--Edit-->
+                                 <a href="#" style="color: #fff;background-color: #e74c3c;padding: 12px 24px;font-size: 17px;border-radius: 6px;font-family:Helvetica, Arial, sans-serif;font-weight:normal;">Empezar ahora</a>
+                                 <!--end Edit-->
+
+                              </td>
+                           </tr>
+                           <tr>
+                              <td class="white" height="70"></td>
+                           </tr>
+                        </tbody></table>
+                     </td>
+                  </tr>
+                  <!--End Actions-->
+
+               </table>
                <!-- end {{ content }} -->
 
 
@@ -422,26 +372,25 @@
                <!--Footer-->
 
                <tr>
-                  <td valign="top">
-                     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                  <td>
+                     <table width="100%" cellpadding="0" cellspacing="0">
                         <tbody>
                         <tr>
-                           <td bgcolor="#ECF0F1">
-                              <table class="table600" bgcolor="#ECF0F1" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-                                 <tbody><tr>
+                           <td style="background: #ECF0F1">
+                              <table class="table600" align="center" width="600" cellpadding="0" cellspacing="0"><tbody>
+                                 <tr>
                                     <td>
-                                       <table class="table550" width="550" border="0" align="center" cellpadding="0" cellspacing="0">
-                                          <tbody><tr>
-                                             <td align="center" valign="top" height="30"></td>
+                                       <table class="table550" width="550" align="center" cellpadding="0" cellspacing="0"><tbody>
+                                          <tr>
+                                             <td height="30"></td>
                                           </tr>
 
                                           <!--info-->
 
                                           <tr>
-                                             <td align="center" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:12px; color:#AAA; line-height:22px;">
+                                             <td style="font-family: Helvetica, Arial, sans-serif; font-size:12px; color:#AAA; line-height:22px; text-align:center;">
                                                 Estás recibiendo este mail porque te has registrado en <a href="#">acamica.com</a><br>
-                                                Si tienes algún problema, contáctanos a
-                                                <a href="#">info@acamica.com</a>
+                                                Contáctanos a <a href="#">info@acamica.com</a> ante cualquier consulta.
                                                 .
                                              </td>
                                           </tr>
@@ -449,15 +398,15 @@
                                           <!--End info-->
 
                                           <tr>
-                                             <td align="center" valign="top" height="20"></td>
+                                             <td height="20"></td>
                                           </tr>
 
                                           <!--Social-->
 
                                           <tr>
-                                             <td align="center" valign="top">
-                                                <table width="130" border="0" cellspacing="0" cellpadding="0">
-                                                   <tbody><tr>
+                                             <td>
+                                                <table width="130" align="center"><tbody>
+                                                   <tr>
                                                       <td>
                                                          <a href="https://www.facebook.com/acamica.org" target="_blank"><img src="http://sc.acamica.com/img/email/facebook.png" width="32" height="32" alt="facebook"></a>
                                                       </td>
@@ -477,7 +426,7 @@
                                           <!--End Social-->
 
                                           <tr>
-                                             <td align="center" valign="top" height="30"></td>
+                                             <td height="30"></td>
                                           </tr>
                                        </tbody></table>
                                     </td>
@@ -486,19 +435,19 @@
                            </td>
                         </tr>
                         <tr>
-                           <td bgcolor="#FFF">
-                              <table class="table600" bgcolor="#FFF" width="600" border="0" align="center" cellpadding="0" cellspacing="0">
+                           <td class="white">
+                              <table class="table600" align="center" width="600" cellpadding="0" cellspacing="0">
                                  <tbody><tr>
                                     <td>
-                                       <table class="table550" width="550" border="0" align="center" cellpadding="0" cellspacing="0">
+                                       <table class="table550" width="550" align="center" cellpadding="0" cellspacing="0">
                                           <tbody><tr>
-                                             <td align="center" valign="top" height="30"></td>
+                                             <td height="30"></td>
                                           </tr>
 
                                           <!--info-->
 
                                           <tr>
-                                             <td align="center" valign="top" style="font-family: Helvetica, Arial, sans-serif; font-size:10px; color:#AAA; line-height:22px;">
+                                             <td style="font-family: Helvetica, Arial, sans-serif; font-size:10px; color:#AAA; line-height:22px; text-align:center;">
                                                 ¿No quieres recibir más emails de nosotros? <a class="untracked" href="{% unsubscribe_url %}">Desuscribirse</a><br>
                                                 Acamica.com · Costa Rica · Buenos Aires, Ciudad Autónoma de Buenos Aires 1184 · Argentina
                                              </td>
@@ -507,7 +456,7 @@
                                           <!--End info-->
 
                                           <tr>
-                                             <td align="center" valign="top" height="30"></td>
+                                             <td height="30"></td>
                                           </tr>
                                        </tbody></table>
                                     </td>
