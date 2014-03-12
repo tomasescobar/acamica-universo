@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8"
+   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+   <title>Acamica - Encuesta</title>
+   <link rel="stylesheet" type="text/css" href="encuesta/css/bootstrap.css">
+   <link rel="stylesheet" type="text/css" href="encuesta/css/flat-ui.css">
+   <link rel="stylesheet" type="text/css" href="encuesta/css/main.css">
+</head>
+<body>
+   <header>
+      <div class="wrap">
+         <!-- Logo -->
+         <img src="encuesta/img/logo-white.png" id="logo">
+         <strong class="lead">Encuesta</strong>
+         <!-- End Logo -->
+       </div>
+   </header>
+   <article id="content">
+      <div id="fullframe" class="iframebox">
+         <iframe scrolling="no" frameborder="0"></iframe>
+      </div>
+   </article>
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+   <script>
+    $(document).ready(function() {
+      
+      // Get URL
+      function GetURLParameter(sParam) {
+        var sPageURL = window.location.search.substring(1),
+            sURLVariables = sPageURL.split('&');
+        for (var i = 0; i < sURLVariables.length; i++) {
+          var sParameterName = sURLVariables[i].split('=');
+          if (sParameterName[0] == sParam) {
+            return sParameterName[1];
+          }
+        }
+      }
+
+      // Parameters
+      var surveyUrl = 'https://es.surveymonkey.com/s/';
+      var id = GetURLParameter('id');
+      $('#fullframe iframe').attr('src',surveyUrl+id);
+
+      // Set height
+      $('#fullframe iframe').height(2000);
+    });
+   </script>
+
+ 
+</body>
+</html>
